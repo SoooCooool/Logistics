@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace:命名空间-->
+<mapper namespace="org.example.dao.VehicleMapper">
+
+    <!--
+    id:resultMap的唯一标识符
+    type:resultMap实际返回的类型
+    -->
+
+    <resultMap id="VehicleResultMap" type="org.example.model.Vehicle">
+        <!--表字段的主键
+        property:类中的属性名
+        column:表中的字段名
+
+
+        -->
+        <result property="vehicle_id" column="vehicle_id"></result>
+        <result property="transfer_belong" column="transfer_belong"></result>
+        <result property="driver_id" column="driver_id"></result>
+    </resultMap>
+
+    <select id="findAll" resultMap="VehicleResultMap" resultType="org.example.model.Vehicle">
+        select * from vehicle
+    </select>
+
+    <select id="getVehiclebyId" resultType="org.example.model.Vehicle">
+        select * from vehicle
+        where vehicle_id = #{vehicle_id}
+    </select>
+
+    <insert id="addVehicle" parameterType="org.example.model.Vehicle">
+        insert into vehicle(vehicle_id,transfer_belong,driver_id)
+        values (#{vehicle_id},#{transfer_belong},#{driver_id})
+    </insert>
+
+    <update id="deleteVehicle">
+        delete from vehicle
+        where vehicle_id = #{vehicle_id}
+    </update>
+
+    <update id="updateVehicle" parameterType="org.example.model.Vehicle">
+        update vehicle set transfer_belong=#{transfer_belong},driver_id=#{driver_id}
+        where vehicle_id = #{vehicle_id}
+    </update>
+
+</mapper>
