@@ -1,0 +1,281 @@
+23:46:55,584 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+23:46:55,686 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:46:55,686 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:46:55,686 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:46:55,687 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:49:19,552 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+23:49:19,661 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:49:19,664 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:49:19,664 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:49:19,664 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:50:08,052 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+23:50:08,147 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:50:08,147 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:50:08,148 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:50:08,148 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:54:59,439 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+23:54:59,531 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:54:59,531 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:54:59,531 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:54:59,532 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:57:01,299 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+23:57:01,402 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:57:01,402 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:57:01,402 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:57:01,403 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:58:55,696 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+23:58:55,790 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:58:55,790 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:58:55,791 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+23:58:55,791 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:01:32,335 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:01:32,445 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:01:32,445 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:01:32,445 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:01:32,446 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:01:32,556 DEBUG JdbcTransaction:137 - Opening JDBC Connection
+00:01:33,957 DEBUG PooledDataSource:406 - Created connection 1164107853.
+00:01:33,957 DEBUG JdbcTransaction:101 - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@4562e04d]
+00:01:33,960 DEBUG findall:159 - ==>  Preparing: select * from merchandise 
+00:01:33,986 DEBUG findall:159 - ==> Parameters: 
+00:01:34,000 TRACE findall:165 - <==    Columns: order_id, kind, weight, arrive_transfer_time, start_time, final_time, present_location, present_state
+00:01:34,000 TRACE findall:165 - <==        Row: D001, 食物, 2, null, null, null, 安徽, 待揽件
+00:01:34,003 TRACE findall:165 - <==        Row: D002, 生活用品, 2, null, null, null, 长沙, 运输中
+00:01:34,003 DEBUG findall:159 - <==      Total: 2
+00:01:43,971 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:01:44,092 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:01:44,092 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:01:44,093 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:01:44,093 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:03:47,617 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:03:47,746 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:03:47,746 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:03:47,747 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:03:47,747 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:07:20,659 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:07:20,802 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:07:20,803 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:07:20,803 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:07:20,804 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:08:02,206 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:08:02,332 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:08:02,333 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:08:02,333 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:08:02,333 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:08:02,448 DEBUG JdbcTransaction:137 - Opening JDBC Connection
+00:08:03,957 DEBUG PooledDataSource:406 - Created connection 825249556.
+00:08:03,958 DEBUG JdbcTransaction:101 - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@31304f14]
+00:08:03,960 DEBUG findMerchandisebykindandstate:159 - ==>  Preparing: select * from merchandise where kind like "????" and present_state = ? 
+00:08:03,987 DEBUG findMerchandisebykindandstate:159 - ==> Parameters: 运输中(String)
+00:08:03,999 DEBUG findMerchandisebykindandstate:159 - <==      Total: 0
+00:08:57,952 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:08:58,077 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:08:58,077 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:08:58,078 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:08:58,078 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:08:58,199 DEBUG JdbcTransaction:137 - Opening JDBC Connection
+00:08:59,710 DEBUG PooledDataSource:406 - Created connection 403147759.
+00:08:59,710 DEBUG JdbcTransaction:101 - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:08:59,713 DEBUG delete:159 - ==>  Preparing: delete from merchandise where order_id = ? 
+00:08:59,739 DEBUG delete:159 - ==> Parameters: D002(String)
+00:08:59,742 DEBUG delete:159 - <==    Updates: 1
+00:08:59,743 DEBUG JdbcTransaction:70 - Committing JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:08:59,745 DEBUG JdbcTransaction:123 - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:08:59,746 DEBUG JdbcTransaction:91 - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:08:59,746 DEBUG PooledDataSource:363 - Returned connection 403147759 to pool.
+00:09:11,136 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:09:11,288 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:09:11,288 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:09:11,288 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:09:11,289 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:09:11,408 DEBUG JdbcTransaction:137 - Opening JDBC Connection
+00:09:12,918 DEBUG PooledDataSource:406 - Created connection 403147759.
+00:09:12,918 DEBUG JdbcTransaction:101 - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:09:12,920 DEBUG insert:159 - ==>  Preparing: insert into merchandise (order_id,kind,weight,arrive_transfer_time,start_time,final_time,present_location,present_state) values(?,?,?,?,?,?,?,?,) 
+00:09:12,951 DEBUG insert:159 - ==> Parameters: D002(String), 生活用品(String), 2(Integer), 2053-10-11 00:00:00.0(Timestamp), 2053-10-11 00:00:00.0(Timestamp), 2053-10-08 00:00:00.0(Timestamp), 长沙(String), 运输中(String)
+00:11:27,365 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:11:27,487 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:11:27,487 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:11:27,487 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:11:27,487 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:11:27,613 DEBUG JdbcTransaction:137 - Opening JDBC Connection
+00:11:29,255 DEBUG PooledDataSource:406 - Created connection 825249556.
+00:11:29,255 DEBUG JdbcTransaction:101 - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@31304f14]
+00:11:29,259 DEBUG findMerchandisebykindandstate:159 - ==>  Preparing: select * from merchandise where kind like "????" and present_state = ? 
+00:11:29,287 DEBUG findMerchandisebykindandstate:159 - ==> Parameters: 运输中(String)
+00:11:29,298 DEBUG findMerchandisebykindandstate:159 - <==      Total: 0
+00:12:22,909 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:12:23,034 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:12:23,034 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:12:23,034 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:12:23,035 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:13:26,589 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:13:26,711 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:13:26,712 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:13:26,712 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:13:26,713 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:13:26,828 DEBUG JdbcTransaction:137 - Opening JDBC Connection
+00:13:28,341 DEBUG PooledDataSource:406 - Created connection 825249556.
+00:13:28,341 DEBUG JdbcTransaction:101 - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@31304f14]
+00:13:28,344 DEBUG findMerchandisebykindandstate:159 - ==>  Preparing: select * from merchandise where kind like "????" and present_state = ? 
+00:13:28,369 DEBUG findMerchandisebykindandstate:159 - ==> Parameters: 运输中(String)
+00:13:28,380 DEBUG findMerchandisebykindandstate:159 - <==      Total: 0
+00:13:48,977 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:13:49,106 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:13:49,106 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:13:49,107 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:13:49,107 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:13:49,236 DEBUG JdbcTransaction:137 - Opening JDBC Connection
+00:13:50,715 DEBUG PooledDataSource:406 - Created connection 1164107853.
+00:13:50,715 DEBUG JdbcTransaction:101 - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@4562e04d]
+00:13:50,717 DEBUG findall:159 - ==>  Preparing: select * from merchandise 
+00:13:50,744 DEBUG findall:159 - ==> Parameters: 
+00:13:50,754 TRACE findall:165 - <==    Columns: order_id, kind, weight, arrive_transfer_time, start_time, final_time, present_location, present_state
+00:13:50,755 TRACE findall:165 - <==        Row: D001, 食物, 2, null, null, null, 安徽, 待揽件
+00:13:50,757 DEBUG findall:159 - <==      Total: 1
+00:14:26,615 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:14:26,739 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:14:26,740 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:14:26,740 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:14:26,740 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:14:26,865 DEBUG JdbcTransaction:137 - Opening JDBC Connection
+00:14:28,412 DEBUG PooledDataSource:406 - Created connection 825249556.
+00:14:28,412 DEBUG JdbcTransaction:101 - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@31304f14]
+00:14:28,414 DEBUG findMerchandisebykindandstate:159 - ==>  Preparing: select * from merchandise where kind like "????" and present_state = ? 
+00:14:28,442 DEBUG findMerchandisebykindandstate:159 - ==> Parameters: 待揽件(String)
+00:14:28,456 DEBUG findMerchandisebykindandstate:159 - <==      Total: 0
+00:15:40,625 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:15:40,743 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:15:40,743 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:15:40,744 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:15:40,744 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:15:40,882 DEBUG JdbcTransaction:137 - Opening JDBC Connection
+00:15:42,398 DEBUG PooledDataSource:406 - Created connection 825249556.
+00:15:42,399 DEBUG JdbcTransaction:101 - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@31304f14]
+00:15:42,401 DEBUG findMerchandisebykindandstate:159 - ==>  Preparing: select * from merchandise where kind like "'??'" and present_state = ? 
+00:15:42,430 DEBUG findMerchandisebykindandstate:159 - ==> Parameters: 待揽件(String)
+00:15:42,441 DEBUG findMerchandisebykindandstate:159 - <==      Total: 0
+00:16:48,564 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:16:48,687 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:16:48,687 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:16:48,688 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:16:48,688 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:16:48,815 DEBUG JdbcTransaction:137 - Opening JDBC Connection
+00:16:50,299 DEBUG PooledDataSource:406 - Created connection 825249556.
+00:16:50,299 DEBUG JdbcTransaction:101 - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@31304f14]
+00:16:50,302 DEBUG findMerchandisebykindandstate:159 - ==>  Preparing: select * from merchandise where kind like "1" and present_state = ? 
+00:16:50,328 DEBUG findMerchandisebykindandstate:159 - ==> Parameters: 1(String)
+00:16:50,341 TRACE findMerchandisebykindandstate:165 - <==    Columns: order_id, kind, weight, arrive_transfer_time, start_time, final_time, present_location, present_state
+00:16:50,342 TRACE findMerchandisebykindandstate:165 - <==        Row: D001, 1, 2, null, null, null, 安徽, 1
+00:16:50,344 DEBUG findMerchandisebykindandstate:159 - <==      Total: 1
+00:17:03,345 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:17:03,480 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:17:03,480 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:17:03,481 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:17:03,481 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:17:03,598 DEBUG JdbcTransaction:137 - Opening JDBC Connection
+00:17:05,132 DEBUG PooledDataSource:406 - Created connection 403147759.
+00:17:05,132 DEBUG JdbcTransaction:101 - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:17:05,135 DEBUG insert:159 - ==>  Preparing: insert into merchandise (order_id,kind,weight,arrive_transfer_time,start_time,final_time,present_location,present_ssttate) values(?,?,?,?,?,?,?,?,) 
+00:17:05,167 DEBUG insert:159 - ==> Parameters: D002(String), 生活用品(String), 2(Integer), 2053-10-11 00:00:00.0(Timestamp), 2053-10-11 00:00:00.0(Timestamp), 2053-10-08 00:00:00.0(Timestamp), 长沙(String), 运输中(String)
+00:17:52,808 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:17:52,930 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:17:52,931 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:17:52,931 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:17:52,931 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:17:53,054 DEBUG JdbcTransaction:137 - Opening JDBC Connection
+00:17:54,637 DEBUG PooledDataSource:406 - Created connection 403147759.
+00:17:54,637 DEBUG JdbcTransaction:101 - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:17:54,640 DEBUG insert:159 - ==>  Preparing: insert into merchandise (order_id,kind,weight,arrive_transfer_time,start_time,final_time,present_location,present_ssttate)values(?,?,?,?,?,?,?,?) 
+00:17:54,678 DEBUG insert:159 - ==> Parameters: D002(String), 生活用品(String), 2(Integer), 2053-10-11 00:00:00.0(Timestamp), 2053-10-11 00:00:00.0(Timestamp), 2053-10-08 00:00:00.0(Timestamp), 长沙(String), 运输中(String)
+00:18:28,095 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:18:28,203 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:18:28,203 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:18:28,203 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:18:28,204 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:18:28,309 DEBUG JdbcTransaction:137 - Opening JDBC Connection
+00:18:29,762 DEBUG PooledDataSource:406 - Created connection 403147759.
+00:18:29,763 DEBUG JdbcTransaction:101 - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:18:29,765 DEBUG insert:159 - ==>  Preparing: insert into merchandise (order_id,kind,weight,arrive_transfer_time,start_time,final_time,present_location,present_sttate)values(?,?,?,?,?,?,?,?) 
+00:18:29,798 DEBUG insert:159 - ==> Parameters: D002(String), 生活用品(String), 2(Integer), 2053-10-11 00:00:00.0(Timestamp), 2053-10-11 00:00:00.0(Timestamp), 2053-10-08 00:00:00.0(Timestamp), 长沙(String), 运输中(String)
+00:18:47,794 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:18:47,929 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:18:47,929 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:18:47,929 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:18:47,930 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:18:48,060 DEBUG JdbcTransaction:137 - Opening JDBC Connection
+00:18:49,525 DEBUG PooledDataSource:406 - Created connection 403147759.
+00:18:49,526 DEBUG JdbcTransaction:101 - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:18:49,528 DEBUG insert:159 - ==>  Preparing: insert into merchandise (order_id,kind,weight,arrive_transfer_time,start_time,final_time,present_location,present_state)values(?,?,?,?,?,?,?,?) 
+00:18:49,560 DEBUG insert:159 - ==> Parameters: D002(String), 生活用品(String), 2(Integer), 2053-10-11 00:00:00.0(Timestamp), 2053-10-11 00:00:00.0(Timestamp), 2053-10-08 00:00:00.0(Timestamp), 长沙(String), 运输中(String)
+00:18:49,564 DEBUG insert:159 - <==    Updates: 1
+00:18:49,564 DEBUG JdbcTransaction:70 - Committing JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:18:49,566 DEBUG JdbcTransaction:123 - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:18:49,567 DEBUG JdbcTransaction:91 - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:18:49,567 DEBUG PooledDataSource:363 - Returned connection 403147759 to pool.
+00:19:44,724 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:19:44,857 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:19:44,858 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:19:44,858 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:19:44,859 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:19:44,985 DEBUG JdbcTransaction:137 - Opening JDBC Connection
+00:19:46,418 DEBUG PooledDataSource:406 - Created connection 825249556.
+00:19:46,418 DEBUG JdbcTransaction:101 - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@31304f14]
+00:19:46,421 DEBUG findMerchandisebykindandstate:159 - ==>  Preparing: select * from merchandise where kind like ? and present_state = ? 
+00:19:46,448 DEBUG findMerchandisebykindandstate:159 - ==> Parameters: 1(String), 1(String)
+00:19:46,462 TRACE findMerchandisebykindandstate:165 - <==    Columns: order_id, kind, weight, arrive_transfer_time, start_time, final_time, present_location, present_state
+00:19:46,463 TRACE findMerchandisebykindandstate:165 - <==        Row: D001, 1, 2, null, null, null, 安徽, 1
+00:19:46,465 DEBUG findMerchandisebykindandstate:159 - <==      Total: 1
+00:20:11,100 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:20:11,225 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:20:11,226 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:20:11,226 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:20:11,226 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:20:11,347 DEBUG JdbcTransaction:137 - Opening JDBC Connection
+00:20:12,879 DEBUG PooledDataSource:406 - Created connection 825249556.
+00:20:12,881 DEBUG JdbcTransaction:101 - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@31304f14]
+00:20:12,884 DEBUG findMerchandisebykindandstate:159 - ==>  Preparing: select * from merchandise where kind like ? and present_state = ? 
+00:20:12,913 DEBUG findMerchandisebykindandstate:159 - ==> Parameters: 生活用品(String), 运输中(String)
+00:20:12,927 TRACE findMerchandisebykindandstate:165 - <==    Columns: order_id, kind, weight, arrive_transfer_time, start_time, final_time, present_location, present_state
+00:20:12,928 TRACE findMerchandisebykindandstate:165 - <==        Row: D002, 生活用品, 2, 2053-10-11, 2053-10-11, 2053-10-08, 长沙, 运输中
+00:20:12,930 DEBUG findMerchandisebykindandstate:159 - <==      Total: 1
+00:20:46,481 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:20:46,604 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:20:46,604 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:20:46,605 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:20:46,605 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:20:46,711 DEBUG JdbcTransaction:137 - Opening JDBC Connection
+00:20:48,284 DEBUG PooledDataSource:406 - Created connection 403147759.
+00:20:48,284 DEBUG JdbcTransaction:101 - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:20:48,286 DEBUG update:159 - ==>  Preparing: update tbl_emp set kind = ?,weight = ?,arrive_transfer_time = ?,start_time = ?,final_time = ?,present_location = ?,present_state = ? where order_id = ? 
+00:20:48,318 DEBUG update:159 - ==> Parameters: 生活用品(String), 4(Integer), 2053-10-11 00:00:00.0(Timestamp), 2053-10-11 00:00:00.0(Timestamp), 2053-10-08 00:00:00.0(Timestamp), 广东(String), 派送中(String), D002(String)
+00:21:17,291 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:21:17,405 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:21:17,405 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:21:17,405 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:21:17,405 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:21:17,521 DEBUG JdbcTransaction:137 - Opening JDBC Connection
+00:21:19,007 DEBUG PooledDataSource:406 - Created connection 403147759.
+00:21:19,008 DEBUG JdbcTransaction:101 - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:21:19,011 DEBUG update:159 - ==>  Preparing: update merchandise set kind = ?,weight = ?,arrive_transfer_time = ?,start_time = ?,final_time = ?,present_location = ?,present_state = ? where order_id = ? 
+00:21:19,047 DEBUG update:159 - ==> Parameters: 生活用品(String), 4(Integer), 2053-10-11 00:00:00.0(Timestamp), 2053-10-11 00:00:00.0(Timestamp), 2053-10-08 00:00:00.0(Timestamp), 广东(String), 派送中(String), D002(String)
+00:21:19,050 DEBUG update:159 - <==    Updates: 1
+00:21:19,051 DEBUG JdbcTransaction:70 - Committing JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:21:19,053 DEBUG JdbcTransaction:123 - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:21:19,054 DEBUG JdbcTransaction:91 - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:21:19,054 DEBUG PooledDataSource:363 - Returned connection 403147759 to pool.
+00:21:32,203 DEBUG LogFactory:135 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+00:21:32,316 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:21:32,317 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:21:32,317 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:21:32,317 DEBUG PooledDataSource:335 - PooledDataSource forcefully closed/removed all connections.
+00:21:32,419 DEBUG JdbcTransaction:137 - Opening JDBC Connection
+00:21:33,953 DEBUG PooledDataSource:406 - Created connection 403147759.
+00:21:33,953 DEBUG JdbcTransaction:101 - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:21:33,957 DEBUG delete:159 - ==>  Preparing: delete from merchandise where order_id = ? 
+00:21:33,987 DEBUG delete:159 - ==> Parameters: D002(String)
+00:21:33,990 DEBUG delete:159 - <==    Updates: 1
+00:21:33,990 DEBUG JdbcTransaction:70 - Committing JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:21:33,993 DEBUG JdbcTransaction:123 - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:21:33,995 DEBUG JdbcTransaction:91 - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@18078bef]
+00:21:33,995 DEBUG PooledDataSource:363 - Returned connection 403147759 to pool.
