@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace:命名空间-->
+<mapper namespace="org.example.dao.AdministratorMapper">
+
+    <!--
+    id:resultMap的唯一标识符
+    type:resultMap实际返回的类型
+    -->
+
+    <resultMap id="AdministratorResultMap" type="org.example.pojo.Administrator">
+        <!--表字段的主键
+        property:类中的属性名
+        column:表中的字段名
+
+
+        -->
+        <result property="administrator_id" column="administrator_id"></result>
+        <result property="created_time" column="created time"></result>
+        <result property="modified_time" column="modified time"></result>
+        <result property="name" column="name"></result>
+        <result property="permissions" column="permissions"></result>
+        <result property="deleted" column="deleted"></result>
+    </resultMap>
+
+    <select id="findAll" resultMap="AdministratorResultMap" resultType="org.example.pojo.Administrator">
+--         select administrator_id,created_time,modified_time,name,permissions,deleted from administrator
+        select * from administrator
+    </select>
+
+    <select id="getAdministratorbyId" resultType="org.example.pojo.Administrator">
+        select * from administrator
+        where administrator_id = #{administrator_id}
+    </select>
+
+    <insert id="addAdministrator" parameterType="org.example.pojo.Administrator">
+        insert into administrator(administrator_id,created_time,modified_time,name,permissions,deleted)
+        values (#{administrator_id},#{create_time},#{modified_time},#{name},#{permissions},#{deleted})
+    </insert>
+
+    <update id="deleteAdministrator">
+        update administrator set deleted=1
+        where administrator_id = #{administrator_id}
+    </update>
+
+    <update id="updateAdministrator" parameterType="org.example.pojo.Administrator">
+        update administrator set created_time=#{create_time},modified_time=#{modified_time},name=#{name},permissions=#{permissions},deleted=#{deleted}
+        where administrator_id = #{administrator_id}
+    </update>
+
+    <select id="findAdministratorByNameAndPermissions" resultType="org.example.pojo.Administrator">
+        select * from administrator
+        where name like concat('%',#{name},'%') and permissions=#{permissions}
+    </select>
+</mapper>

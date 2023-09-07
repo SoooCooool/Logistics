@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace:命名空间-->
+<mapper namespace="org.example.dao.TransferMapper">
+
+    <!--
+    id:resultMap的唯一标识符
+    type:resultMap实际返回的类型
+    -->
+
+    <resultMap id="TransferResultMap" type="org.example.pojo.Transfer">
+        <!--表字段的主键
+        property:类中的属性名
+        column:表中的字段名
+        -->
+        <result property="transfer" column="location"></result>
+        <result property="dis_hb" column="dis_hb"></result>
+        <result property="dis_db" column="dis_db"></result>
+        <result property="dis_hd" column="dis_hd"></result>
+        <result property="dis_zn" column="dis_zn"></result>
+        <result property="dis_xn" column="dis_xn"></result>
+        <result property="dis_xb" column="dis_xb"></result>
+    </resultMap>
+
+    <select id="findAll" resultMap="TransferResultMap" resultType="org.example.pojo.Transfer">
+        select * from transfer
+    </select>
+
+    <select id="getTransferByName" resultMap="TransferResultMap" resultType="org.example.pojo.Transfer">
+        select * from transfer
+        where location = #{transfer}
+    </select>
+
+</mapper>
