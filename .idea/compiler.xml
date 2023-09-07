@@ -9,8 +9,8 @@
         <module name="Pinda" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="11">
-      <module name="Pinda" target="1.7" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="Pinda" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
