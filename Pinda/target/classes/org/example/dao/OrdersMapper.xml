@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace:命名空间-->
+<mapper namespace="org.example.dao.OrdersMapper">
+
+
+    <insert id="Addorders">
+        insert into orders (order_id,user_id,employee_id,modified_person_id,created_time,modified_time,
+                               state,start_location,destination,deleted,amount)
+        values (#{order_id},#{user_id},#{employee_id},#{modified_person_id},#{created_time},#{modified_time},
+                #{state},#{start_location},#{destination},#{deleted},#{amount})
+    </insert>
+
+    <update id="Updateorders">
+        update orders
+        set user_id=#{user_id},employee_id=#{employee_id},modified_person_id=#{modified_person_id},created_time=#{created_time},modified_time=#{modified_time},
+            state=#{state},start_location=#{start_location},destination=#{destination},deleted=#{deleted},amount=#{amount}
+        where order_id = #{order_id}
+    </update>
+
+    <delete id="DeleteordersById">
+        delete from orders
+        where order_id = #{order_id}
+    </delete>
+    <delete id="DeleteordersByIds">
+        delete from orders
+        where order_id in
+        <foreach collection="list" open="(" close=")" separator="," item="order_id">
+            #{order_id}
+        </foreach>
+    </delete>
+
+    <select id="QueryordersById" resultType="org.example.pojo.Orders">
+        select * from orders
+        where order_id = #{order_id}
+    </select>
+    <select id="QueryordersAll" resultType="org.example.pojo.Orders">
+        select * from orders
+    </select>
+
+    <select id="Queryorders" resultType="org.example.pojo.Orders" parameterType="map">
+        select * from orders
+        <where>
+            <!--添加if条件如果参数为空则不拼接sql-->
+            <if test="order_id != null and order_id != '' ">
+                and order_id like concat('%',#{order_id},'%')
+            </if>
+            <if test="user_id != null and user_id != '' ">
+                and user_id like concat('%',#{user_id},'%')
+            </if>
+            <if test="employee_id != null and employee_id != '' ">
+                and employee_id like concat('%',#{employee_id},'%')
+            </if>
+            <if test="state != null and state != '' ">
+                and state like concat('%',#{state},'%')
+            </if>
+            <if test="start_location != null and start_location != '' ">
+                and start_location like concat('%',#{start_location},'%')
+            </if>
+            <if test="destination != null and destination != '' ">
+                and destination like concat('%',#{destination},'%')
+            </if>
+            <if test="amount != null and amount != '' ">
+                and amount like concat('%',#{amount},'%')
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

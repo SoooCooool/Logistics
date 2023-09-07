@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace:命名空间-->
+<mapper namespace="org.example.dao.UserMapper">
+
+
+    <insert id="Adduser">
+        insert into user (user_id,name,created_time,modified_time,location,phonenumber,permissions)
+        values (#{user_id},#{name},#{created_time},#{modified_time},#{location},#{phonenumber},#{permissions})
+    </insert>
+
+    <update id="Updateuser">
+        update user
+        set name=#{name},created_time=#{created_time},modified_time=#{modified_time},location=#{location},
+            phonenumber=#{phonenumber},permissions=#{permissions}
+        where user_id=#{user_id}
+    </update>
+
+    <delete id="DeleteuserById">
+        delete from user
+        where user_id=#{user_id}
+    </delete>
+
+    <select id="DeleteuserByIds" resultType="org.example.pojo.User">
+        delete from user
+        where user_id in
+        <foreach collection="list" open="(" close=")" separator="," item="user_id">
+            #{user_id}
+        </foreach>
+    </select>
+    <select id="QueryuserById" resultType="org.example.pojo.User">
+        select * from user
+        where user_id = #{user_id}
+    </select>
+    <select id="QueryuserAll" resultType="org.example.pojo.User">
+        select * from user
+    </select>
+
+    <select id="Queryuser" resultType="org.example.pojo.User" parameterType="map">
+        select * from user
+        <where>
+            <!--添加if条件如果参数为空则不拼接sql-->
+            <if test="user_id != null and user_id != '' ">
+                and user_id like concat('%',#{user_id},'%')
+            </if>
+            <if test="name != null and name != '' ">
+                and name like concat('%',#{name},'%')
+            </if>
+            <if test="created_time != null and created_time != '' ">
+                and created_time like concat('%',#{created_time},'%')
+            </if>
+            <if test="location != null and location != '' ">
+                and location like concat('%',#{location},'%')
+            </if>
+            <if test="phonenumber != null and phonenumber != '' ">
+                and phonenumber like concat('%',#{phonenumber},'%')
+            </if>
+        </where>
+    </select>
+
+
+</mapper>
