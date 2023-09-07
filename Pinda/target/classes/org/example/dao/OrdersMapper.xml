@@ -62,7 +62,7 @@
             <if test="destination != null and destination != '' ">
                 and destination like concat('%',#{destination},'%')
             </if>
-            <if test="amount != null and amount != '' ">
+            <if test="amount != null and amount != '' and (amount > 0 or amount = 0)">
                 and amount like concat('%',#{amount},'%')
             </if>
         </where>
