@@ -1,19 +1,21 @@
 package org.example.service;
 
 import org.example.pojo.Orders;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 public interface OrdersService {
-    List<Orders> queryOrdersAll();
+    public List<Orders> queryOrdersAll();
 
-    Orders queryOrdersById(String id);
+    public Orders queryOrdersById(String id);
 
-    void deleteOrdersById(String id);
+    public void deleteOrdersById(String id);
 
-    void deleteOrdersByIds(String[] ids);
+    public void deleteOrdersByIds(String[] ids);
 
-    void addOrdersByIds(Orders orders);
+    public void addOrders(Orders orders);
 
-    void updateOrdersByIds(Orders orders);
+    public void updateOrders(Orders orders);
 }

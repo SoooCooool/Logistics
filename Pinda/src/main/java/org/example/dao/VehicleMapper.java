@@ -1,7 +1,12 @@
 package org.example.dao;
 
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.example.pojo.Vehicle;
+import org.springframework.stereotype.Repository;
+
+
 
 public interface VehicleMapper {
     /**

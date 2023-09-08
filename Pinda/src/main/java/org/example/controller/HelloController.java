@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -18,7 +19,7 @@ import java.util.Map;
  *    可以在类或方法上添加该注解
  *    value:用于指定请求的映射地址到实际的方法上
  */
-@RestController
+@Controller
 public class HelloController {
 
     @RequestMapping(value = "/hello" ,method = RequestMethod.GET)

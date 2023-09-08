@@ -16,6 +16,11 @@ spring:
       additional-paths: SpringBootBasic/src/main/java
       exclude: static/**
 
+mybatis:
+  mapper-locations: classpath:org/example/dao/*.xml
+  type-aliases-package: org.example.pojo
+
+
 tymeleaf:
   model: HTML5
   encoding: UTF-8
