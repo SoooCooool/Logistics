@@ -43,8 +43,9 @@ public class OrdersController {
      */
     @PostMapping(value = "/add")
     public String add(Orders orders){
+        orders.setDeleted(0);
         ordersService.addOrders(orders);
-        return "redirect:/queryAll";
+        return "redirect:/orders/queryAll";
     }
 
     /**
@@ -67,7 +68,7 @@ public class OrdersController {
     @GetMapping(value = "/update")
     public String update(Orders orders){
         ordersService.updateOrders(orders);
-        return "redirect:/queryAll";
+        return "redirect:/orders/queryAll";
     }
 
     /**
@@ -78,13 +79,13 @@ public class OrdersController {
     @PostMapping(value = "/deleteById")
     public String deleteById(@RequestParam(value = "id") String id){
         ordersService.deleteOrdersById(id);
-        return "redirect:/queryAll";
+        return "redirect:/orders/queryAll";
     }
 
     @PostMapping(value = "/deleteByIds")
     public String deleteByIds(@RequestParam(value = "ids") String[] ids){
         ordersService.deleteOrdersByIds(ids);
-        return "redirect:/queryAll";
+        return "redirect:/orders/queryAll";
     }
 
 

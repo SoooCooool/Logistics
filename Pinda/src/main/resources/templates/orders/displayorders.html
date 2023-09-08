@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <h1>显示订单所有信息</h1>
+        <a th:href="@{/toadd}">添加</a>
+<table border="1">
+
+    <tr>
+        <td>订单id</td>
+        <td>用户id</td>
+        <td>员工id</td>
+        <td>修改人</td>
+        <td>创建时间</td>
+        <td>修改时间</td>
+        <td>当前状态</td>
+        <td>始发地址</td>
+        <td>目的地</td>
+        <td>金额</td>
+    </tr>
+
+    <tr th:each="orders : ${orders}">
+        <td th:text="${orders.order_id}"></td>
+        <td th:text="${orders.user_id}"></td>
+        <td th:text="${orders.employee_id}"></td>
+        <td th:text="${orders.modified_person_id}"></td>
+        <td th:text="${orders.created_time}"></td>
+        <td th:text="${orders.modified_time}"></td>
+        <td th:text="${orders.state}"></td>
+        <td th:text="${orders.start_location}"></td>
+        <td th:text="${orders.destination}"></td>
+        <td>
+            <a th:href="@{/queryById(id=${orders.order_id})}">修改</a>
+            |
+            <a th:href="@{/deleteById(id=${orders.order_id})}">删除</a></td>
+    </tr>
+</table>
+</body>
+</html>

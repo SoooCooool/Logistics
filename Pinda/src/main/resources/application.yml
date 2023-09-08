@@ -13,7 +13,7 @@ spring:
       restart:
         enabled: true
     restart:
-      additional-paths: SpringBootBasic/src/main/java
+      additional-paths: Pinda/src/main/java
       exclude: static/**
 
 mybatis:

@@ -44,7 +44,7 @@ public class UserController {
     @PostMapping(value = "/add")
     public String add(User user){
         userService.addUser(user);
-        return "redirect:/queryAll";
+        return "redirect:/user/queryAll";
     }
 
     /**
@@ -67,7 +67,7 @@ public class UserController {
     @GetMapping(value = "/update")
     public String update(User user){
         userService.updateUser(user);
-        return "redirect:/queryAll";
+        return "redirect:/user/queryAll";
     }
 
     /**
@@ -78,13 +78,13 @@ public class UserController {
     @PostMapping(value = "/deleteById")
     public String deleteById(@RequestParam(value = "id") String id){
         userService.deleteUserById(id);
-        return "redirect:/queryAll";
+        return "redirect:/user/queryAll";
     }
 
     @PostMapping(value = "/deleteByIds")
     public String deleteByIds(@RequestParam(value = "ids") String[] ids){
         userService.deleteUserByIds(ids);
-        return "redirect:/queryAll";
+        return "redirect:/user/queryAll";
     }
 
 

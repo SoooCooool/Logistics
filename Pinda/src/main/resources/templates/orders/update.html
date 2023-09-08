@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>修改订单信息</h1>
+
+<form th:action="@{/update}" method="get">
+    订单id:<input type="text" name="order_id" readonly th:value="${orders.order_id}"><br>
+    用户id:<input type="text" name="user_id" th:value="${orders.user_id}"><br>
+    员工id:<input type="text" name="employee_id" th:value="${orders.employee_id}"><br>
+    修改人:<input type="text" name="modified_person_id" th:value="${orders.modified_person_id}"><br>
+    创建时间:<input type="text" name="created_time" th:value="${orders.created_time}"><br>
+    修改时间:<input type="text" name="modified_time" th:value="${orders.modified_time}"><br>
+    当前状态:<input type="text" name="state" th:value="${orders.state}"><br>
+    始发地址:<input type="text" name="start_location" th:value="${orders.start_location}"><br>
+    目的地:<input type="text" name="destination" th:value="${orders.destination}"><br>
+    金额:<input type="text" name="amount" readonly th:value="${orders.amount}"><br>
+    <input type="submit" name="submit" value="保存">
+</form>
+</body>
+</html>
