@@ -1,6 +1,9 @@
 package org.example.controller;
 
+import org.example.common.Result;
+import org.example.pojo.Orders;
 import org.example.pojo.User;
+import org.example.service.OrdersService;
 import org.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,19 +15,19 @@ import java.util.List;
 @Controller
 @RequestMapping(value="/user")
 public class UserController {
-    @Autowired(required=false)
+    @Autowired
     private UserService userService;
 
     /**
      * 查询所有用户
-     * @param model
+     * @param
      * @return
      */
     @GetMapping(value = "/queryAll")
-    public String queryAll(Model model){
-        List<User> user = userService.queryUserAll();
-        model.addAttribute("User",user);
-        return "user/displayuser";
+    @ResponseBody
+    public Result queryAll(){
+        List<User> users = userService.queryUserAll();
+        return Result.success(users);
     }
 
     /**
@@ -33,18 +36,19 @@ public class UserController {
      */
     @PostMapping("/toadd")
     public String toAdd(){
-        return "user/add";
+        return "orders/add";
     }
 
     /**
      * 添加用户信息
-     * @param user
+     * @param
      * @return
      */
     @PostMapping(value = "/add")
-    public String add(User user){
+    @ResponseBody
+    public Result add(@RequestBody User user){
         userService.addUser(user);
-        return "redirect:/user/queryAll";
+        return Result.success("success");
     }
 
     /**
@@ -53,21 +57,22 @@ public class UserController {
      * @return
      */
     @GetMapping(value = "/queryById")
-    public String queryById(@RequestParam(value = "id") String id, Model model){
+    @ResponseBody
+    public Result queryById(@RequestParam(value = "id") String id){
         User user = userService.queryUserById(id);
-        model.addAttribute("User",user);
-        return "user/update";
+        return Result.success(user);
     }
 
     /**
      * 编辑更新用户信息
-     * @param user
+     * @param
      * @return
      */
-    @GetMapping(value = "/update")
-    public String update(User user){
+    @PostMapping(value = "/update")
+    @ResponseBody
+    public Result update(@RequestBody User user){
         userService.updateUser(user);
-        return "redirect:/user/queryAll";
+        return Result.success("success");
     }
 
     /**
@@ -76,17 +81,18 @@ public class UserController {
      * @return
      */
     @PostMapping(value = "/deleteById")
-    public String deleteById(@RequestParam(value = "id") String id){
+    @ResponseBody
+    public Result deleteById(@RequestParam(value = "id") String id){
         userService.deleteUserById(id);
-        return "redirect:/user/queryAll";
+        return Result.success("success");
     }
 
     @PostMapping(value = "/deleteByIds")
-    public String deleteByIds(@RequestParam(value = "ids") String[] ids){
+    @ResponseBody
+    public Result deleteByIds(@RequestParam(value = "ids") String[] ids){
         userService.deleteUserByIds(ids);
-        return "redirect:/user/queryAll";
+        return Result.success("success");
     }
-
 
 }
 
