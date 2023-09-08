@@ -8,13 +8,16 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-
+@Mapper
+@Repository
 public interface EmployeeMapper {
-    public List<Employee> findall();
-    public void insert(Employee employee);
-    public void delete(String employee_id);
-    public void update(Employee employee);
-    public List<Employee> findEmployeeByphonenumberandoccupation(
+
+     List<Employee> findall();
+     Employee findbyid(String employee_id);
+     void insert(Employee employee);
+     void delete(String employee_id);
+     void update(Employee employee);
+     List<Employee> findEmployeeByphonenumberandoccupation(
             @Param("phonenumber") String phonenumber,
             @Param("occupation") String occupation);
 }

@@ -22,6 +22,9 @@
     <select id="findall" resultType="org.example.pojo.Merchandise">
         select * from merchandise
     </select>
+    <select id="findbyid" resultType="org.example.pojo.Merchandise">
+        select * from merchandise where order_id = #{order_id}
+    </select>
     <select id="findMerchandisebykindandstate" resultType="org.example.pojo.Merchandise">
         select * from merchandise where kind like #{kind} and present_state = #{present_state}
     </select>

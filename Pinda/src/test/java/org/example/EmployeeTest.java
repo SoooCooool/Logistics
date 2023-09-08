@@ -3,6 +3,7 @@ package org.example;
 import org.apache.ibatis.session.SqlSession;
 import org.example.dao.EmployeeMapper;
 import org.example.pojo.Employee;
+import org.example.pojo.Orders;
 import org.example.utils.SqlSessionUtil;
 import org.junit.Test;
 
@@ -13,9 +14,7 @@ public class EmployeeTest {
         @Test
         public void find(){
             SqlSession sqlSession = SqlSessionUtil.getSqlSession();
-        /*List<Employee> employeelist  =
-                sqlSession.selectList("org.example.dao.EmployeeMapper.findall");
-        System.out.println(employeelist);*/
+
             EmployeeMapper employeeMaper =
                     sqlSession.getMapper(EmployeeMapper.class);
 
@@ -27,6 +26,23 @@ public class EmployeeTest {
         /*sqlSession.commit();
         sqlSession.close();*/
         }
+    @Test
+    public void findbyid(){
+        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+
+        /*Employee employee =
+                sqlSession.selectOne("org.example.dao.EmployeeMapper.findbyid()","D001");*/
+        EmployeeMapper employeeMaper =
+                sqlSession.getMapper(EmployeeMapper.class);
+
+
+        Employee employees =
+                 employeeMaper.findbyid("E114514");
+            System.out.println(employees);
+
+        sqlSession.commit();
+        sqlSession.close();
+    }
         @Test
         public void find1(){
             SqlSession sqlSession = SqlSessionUtil.getSqlSession();
