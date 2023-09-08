@@ -33,8 +33,7 @@
     </delete>
 
     <select id="QueryordersById" resultType="org.example.pojo.Orders">
-        select * from orders
-        where order_id = #{order_id}
+        select * from orders where order_id = #{order_id}
     </select>
     <select id="QueryordersAll" resultType="org.example.pojo.Orders">
         select * from orders
