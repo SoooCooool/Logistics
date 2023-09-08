@@ -21,7 +21,7 @@ mybatis:
   type-aliases-package: org.example.pojo
 
 
-tymeleaf:
+thymeleaf:
   model: HTML5
   encoding: UTF-8
   prefix: classpath:/templates/

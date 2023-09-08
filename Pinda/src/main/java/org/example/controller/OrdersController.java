@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.example.common.Result;
 import org.example.pojo.Orders;
 import org.example.service.OrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,14 +18,14 @@ public class OrdersController {
 
     /**
      * 查询所有订单
-     * @param model
+     * @param
      * @return
      */
     @GetMapping(value = "/queryAll")
-    public String queryAll(Model model){
+    @ResponseBody
+    public Result queryAll(){
         List<Orders> orders = ordersService.queryOrdersAll();
-        model.addAttribute("Orders",orders);
-        return "orders/displayorders";
+        return Result.success(orders);
     }
 
     /**
@@ -42,10 +43,10 @@ public class OrdersController {
      * @return
      */
     @PostMapping(value = "/add")
-    public String add(Orders orders){
+    public Result add(Orders orders){
         orders.setDeleted(0);
         ordersService.addOrders(orders);
-        return "redirect:/orders/queryAll";
+        return Result.success("success");
     }
 
     /**
@@ -54,10 +55,9 @@ public class OrdersController {
      * @return
      */
     @GetMapping(value = "/queryById")
-    public String queryById(@RequestParam(value = "id") String id,Model model){
+    public Result queryById(@RequestParam(value = "id") String id,Model model){
         Orders orders = ordersService.queryOrdersById(id);
-        model.addAttribute("Orders",orders);
-        return "orders/update";
+        return Result.success(orders);
     }
 
     /**
@@ -66,9 +66,9 @@ public class OrdersController {
      * @return
      */
     @GetMapping(value = "/update")
-    public String update(Orders orders){
+    public Result update(Orders orders){
         ordersService.updateOrders(orders);
-        return "redirect:/orders/queryAll";
+        return Result.success("success");
     }
 
     /**
@@ -77,15 +77,15 @@ public class OrdersController {
      * @return
      */
     @PostMapping(value = "/deleteById")
-    public String deleteById(@RequestParam(value = "id") String id){
+    public Result deleteById(@RequestParam(value = "id") String id){
         ordersService.deleteOrdersById(id);
-        return "redirect:/orders/queryAll";
+        return Result.success("success");
     }
 
     @PostMapping(value = "/deleteByIds")
-    public String deleteByIds(@RequestParam(value = "ids") String[] ids){
+    public Result deleteByIds(@RequestParam(value = "ids") String[] ids){
         ordersService.deleteOrdersByIds(ids);
-        return "redirect:/orders/queryAll";
+        return Result.success("success");
     }
 
 
