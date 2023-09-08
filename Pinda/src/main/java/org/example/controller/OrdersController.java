@@ -43,7 +43,8 @@ public class OrdersController {
      * @return
      */
     @PostMapping(value = "/add")
-    public Result add(Orders orders){
+    @ResponseBody
+    public Result add(@RequestBody Orders orders){
         orders.setDeleted(0);
         ordersService.addOrders(orders);
         return Result.success("success");
@@ -55,7 +56,8 @@ public class OrdersController {
      * @return
      */
     @GetMapping(value = "/queryById")
-    public Result queryById(@RequestParam(value = "id") String id,Model model){
+    @ResponseBody
+    public Result queryById(@RequestParam(value = "id") String id){
         Orders orders = ordersService.queryOrdersById(id);
         return Result.success(orders);
     }
@@ -65,8 +67,9 @@ public class OrdersController {
      * @param orders
      * @return
      */
-    @GetMapping(value = "/update")
-    public Result update(Orders orders){
+    @PostMapping(value = "/update")
+    @ResponseBody
+    public Result update(@RequestBody Orders orders){
         ordersService.updateOrders(orders);
         return Result.success("success");
     }
@@ -77,12 +80,14 @@ public class OrdersController {
      * @return
      */
     @PostMapping(value = "/deleteById")
+    @ResponseBody
     public Result deleteById(@RequestParam(value = "id") String id){
         ordersService.deleteOrdersById(id);
         return Result.success("success");
     }
 
     @PostMapping(value = "/deleteByIds")
+    @ResponseBody
     public Result deleteByIds(@RequestParam(value = "ids") String[] ids){
         ordersService.deleteOrdersByIds(ids);
         return Result.success("success");
