@@ -23,6 +23,17 @@ public class MerchandiseTest {
             sqlSession.close();*/
     }
     @Test
+    public void findbyid(){
+        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        MerchandiseMapper merchandiseMapper = sqlSession.getMapper(MerchandiseMapper.class);
+        Merchandise merchandises =
+                merchandiseMapper.findbyid("D001");
+
+            System.out.println(merchandises);
+            /*sqlSession.commit();
+            sqlSession.close();*/
+    }
+    @Test
     public void find1(){
         SqlSession sqlSession = SqlSessionUtil.getSqlSession();
         MerchandiseMapper merchandiseMapper = sqlSession.getMapper(MerchandiseMapper.class);

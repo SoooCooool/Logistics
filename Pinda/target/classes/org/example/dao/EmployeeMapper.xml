@@ -19,6 +19,9 @@
     <update id="update">
         update employee set created_time = #{created_time},modified_time = #{modified_time},name = #{name},phonenumber = #{phonenumber},occupation = #{occupation},permissions = #{permissions},deleted = #{deleted} where employee_id = #{employee_id}
     </update>
+    <select id="findbyid" resultType="org.example.pojo.Employee">
+        select * from employee where employee_id = #{employee_id}
+    </select>
     <select id="findall" resultType="org.example.pojo.Employee">
         select * from employee
     </select>
