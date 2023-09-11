@@ -28,7 +28,7 @@
         select * from administrator
     </select>
 
-    <select id="getAdministratorbyId" resultType="org.example.pojo.Administrator">
+    <select id="getAdministratorById" resultType="org.example.pojo.Administrator">
         select * from administrator
         where administratorid = #{administratorid}
     </select>
@@ -38,12 +38,12 @@
         values (#{administratorid},#{createtime},#{modifiedtime},#{name},#{permissions},#{deleted})
     </insert>
 
-    <update id="deleteAdministrator">
+    <update id="deleteAdministratorById">
         update administrator set deleted=1
         where administratorid = #{administratorid}
     </update>
 
-    <update id="updateAdministrator" parameterType="org.example.pojo.Administrator">
+    <update id="updateAdministratorById" parameterType="org.example.pojo.Administrator">
         update administrator set createdtime=#{createtime},modifiedtime=#{modifiedtime},name=#{name},permissions=#{permissions},deleted=#{deleted}
         where administratorid = #{administratorid}
     </update>
