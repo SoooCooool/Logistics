@@ -11,17 +11,17 @@ import java.util.List;
 
 
 public interface OrdersMapper {
-    Orders QueryordersById(String order_id);
+    Orders QueryordersById(String orderid);
 
     List<Orders> QueryordersAll();
 
-    List<Orders> Queryorders(@Param("order_id")String order_id, @Param("user_id")String user_id, @Param("employee_id")String employee_id,
-                             @Param("state")String state, @Param("start_location")String start_location, @Param("destination")String destination, @Param("amount")Integer amount);
+    List<Orders> Queryorders(@Param("orderid")String orderid, @Param("userid")String userid, @Param("employeeid")String employeeid,
+                             @Param("state")String state, @Param("startlocation")String startlocation, @Param("destination")String destination, @Param("amount")Integer amount);
 
     void Addorders(Orders orders);
 
-    void DeleteordersById(String order_id);
-    void DeleteordersByIds(@Param("order_ids") List<String> order_ids);
+    void DeleteordersById(String orderid);
+    void DeleteordersByIds(@Param("orderids") List<String> orderids);
 
     void Updateorders(Orders orders);
 }

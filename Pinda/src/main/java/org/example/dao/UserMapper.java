@@ -15,17 +15,17 @@ import java.util.List;
 
 
 public interface UserMapper {
-    User QueryuserById(String user_id);
+    User QueryuserById(String userid);
 
     List<User> QueryuserAll();
 
-    List<User> Queryuser(@Param("user_id")String order_id, @Param("name")String name, @Param("created_time") Data created_time,
+    List<User> Queryuser(@Param("userid")String orderid, @Param("name")String name, @Param("createdtime") Data createdtime,
                              @Param("location")String location, @Param("phonenumber")String phonenumber);
 
     void Adduser(User user);
 
-    void DeleteuserById(String user_id);
-    void DeleteuserByIds(@Param("user_ids") String user_ids);
+    void DeleteuserById(String userid);
+    void DeleteuserByIds(@Param("user_ids") String userids);
 
     void Updateuser(User user);
 }

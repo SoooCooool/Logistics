@@ -23,10 +23,10 @@ public interface AdministratorMapper {
     public List<Administrator> findAll();
     /**
      * 功能：根据管理员工号查询员工信息
-     * @param administrator_id
+     * @param administratorid
      * @return
      */
-    public Administrator getAdministratorbyId(String administrator_id);
+    public Administrator getAdministratorbyId(String administratorid);
     /**
      * 功能：添加管理员信息
      * @param administrator ：管理员对象
@@ -42,10 +42,10 @@ public interface AdministratorMapper {
     public Integer updateAdministrator(Administrator administrator);
     /**
      * 功能：根据管理员工号删除管理员信息
-     * @param administrator_id ：要删除的管理员工号
+     * @param administratorid ：要删除的管理员工号
      * @return
      */
-    public Integer deleteAdministrator(String administrator_id);
+    public Integer deleteAdministrator(String administratorid);
     /**
      * 功能：按多个条件组合查询
      * @Param注解，实现传递多个参数的命名

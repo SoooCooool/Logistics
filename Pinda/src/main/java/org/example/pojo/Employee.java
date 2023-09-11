@@ -9,25 +9,25 @@ import java.util.Date;
  *      empolyee_id,created_time,modified_time,name,phonenumber,occupation,permission,deleted
  */
 public class Employee {
-    private String employee_id;
-    private Date created_time;
-    private Date modified_time;
+    private String employeeid;
+    private Date createdtime;
+    private Date modifiedtime;
     private String name;
     private int phonenumber;
     private String occupation;
     private int permissions;
     private int deleted;
-    public String getEmployee_id() {return employee_id;}
-    public void setEmployee_id(String employee_id){this.employee_id=employee_id;}
-    public Date getCreated_time(){return created_time;}
-    public void setCreated_time(Date created_time){this.created_time=created_time;}
+    public String getEmployeeid() {return employeeid;}
+    public void setEmployeeid(String employeeid){this.employeeid=employeeid;}
+    public Date getCreatedtime(){return createdtime;}
+    public void setCreatedtime(Date createdtime){this.createdtime=createdtime;}
 
-    public Date getModified_time() {
-        return modified_time;
+    public Date getModifiedtime() {
+        return modifiedtime;
     }
 
-    public void setModified_time(Date modified_time) {
-        this.modified_time = modified_time;
+    public void setModifiedtime(Date modifiedtime) {
+        this.modifiedtime = modifiedtime;
     }
 
     public String getName() {
@@ -73,9 +73,9 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" +
-                "employee_id='" + employee_id + '\'' +
-                ", created_time=" + created_time +
-                ", modified_time=" + modified_time +
+                "employeeid='" + employeeid + '\'' +
+                ", createdtime=" + createdtime +
+                ", modifiedtime=" + modifiedtime +
                 ", name='" + name + '\'' +
                 ", phonenumber=" + phonenumber +
                 ", occupation='" + occupation + '\'' +

@@ -2,34 +2,34 @@ package org.example.pojo;
 import java.util.Date;
 
 public class Administrator {
-    private String administrator_id;
-    private Date create_time = new Date();
-    private Date modified_time = new Date();
+    private String administratorid;
+    private Date createtime = new Date();
+    private Date modifiedtime = new Date();
     private String name;
 
 
-    public String getAdmin_id() {
-        return administrator_id;
+    public String getAdminid() {
+        return administratorid;
     }
 
-    public void setAdmin_id(String admin_id) {
-        this.administrator_id = admin_id;
+    public void setAdminid(String adminid) {
+        this.administratorid = adminid;
     }
 
-    public Date getCreate_Date() {
-        return create_time;
+    public Date getCreateDate() {
+        return createtime;
     }
 
-    public void setCreate_Date(Date create_Date) {
-        this.create_time = create_Date;
+    public void setCreateDate(Date createDate) {
+        this.createtime = createDate;
     }
 
-    public Date getModified_time() {
-        return modified_time;
+    public Date getModifiedtime() {
+        return modifiedtime;
     }
 
-    public void setModified_time(Date modified_time) {
-        this.modified_time = modified_time;
+    public void setModifiedtime(Date modifiedtime) {
+        this.modifiedtime = modifiedtime;
     }
 
     public String getName() {
@@ -61,9 +61,9 @@ public class Administrator {
 
     public String toString() {
         return "Administrator{" +
-                "administrator_id='" + administrator_id +
-                "', create_time=" + create_time +
-                ", modified_time=" + modified_time +
+                "administratorid='" + administratorid +
+                "', createtime=" + createtime +
+                ", modifiedtime=" + modifiedtime +
                 ", name='" + name +
                 "', permissions=" + permissions +
                 ", deleted=" + deleted +

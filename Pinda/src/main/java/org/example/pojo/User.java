@@ -3,20 +3,20 @@ package org.example.pojo;
 import java.util.Date;
 
 public class User {
-    private String user_id;
+    private String userid;
     private String name;
-    private Date created_time;
-    private Date modified_time;
+    private Date createdtime;
+    private Date modifiedtime;
     private String location;
     private Integer phonenumber;
     private Integer permissions;
 
-    public String getUser_id() {
-        return user_id;
+    public String getUserid() {
+        return userid;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     public String getName() {
@@ -27,20 +27,20 @@ public class User {
         this.name = name;
     }
 
-    public Date getCreated_time() {
-        return created_time;
+    public Date getCreatedtime() {
+        return createdtime;
     }
 
-    public void setCreated_time(Date created_time) {
-        this.created_time = created_time;
+    public void setCreatedtime(Date createdtime) {
+        this.createdtime = createdtime;
     }
 
-    public Date getModified_time() {
-        return modified_time;
+    public Date getModifiedtime() {
+        return modifiedtime;
     }
 
-    public void setModified_time(Date modified_time) {
-        this.modified_time = modified_time;
+    public void setModifiedtime(Date modifiedtime) {
+        this.modifiedtime = modifiedtime;
     }
 
     public String getLocation() {
@@ -70,10 +70,10 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "user_id='" + user_id + '\'' +
+                "userid='" + userid + '\'' +
                 ", name='" + name + '\'' +
-                ", created_time=" + created_time +
-                ", modified_time=" + modified_time +
+                ", createdtime=" + createdtime +
+                ", modifiedtime=" + modifiedtime +
                 ", location='" + location + '\'' +
                 ", phonenumber=" + phonenumber +
                 ", permissions=" + permissions +

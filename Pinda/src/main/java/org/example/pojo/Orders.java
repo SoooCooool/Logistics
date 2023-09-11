@@ -3,64 +3,64 @@ package org.example.pojo;
 import java.util.Date;
 
 public class Orders {
-    private String order_id;
-    private String user_id;
-    private String employee_id;
-    private String modified_person_id;
-    private Date created_time;
-    private Date modified_time;
+    private String orderid;
+    private String userid;
+    private String employeeid;
+    private String modifiedpersonid;
+    private Date createdtime;
+    private Date modifiedtime;
     private String state;
-    private String start_location;
+    private String startlocation;
     private String destination;
     private Integer deleted;
     private Integer amount;
 
-    public String getOrder_id() {
-        return order_id;
+    public String getOrderid() {
+        return orderid;
     }
 
-    public void setOrder_id(String order_id) {
-        this.order_id = order_id;
+    public void setOrderid(String orderid) {
+        this.orderid = orderid;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public String getUserid() {
+        return userid;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
-    public String getEmployee_id() {
-        return employee_id;
+    public String getEmployeeid() {
+        return employeeid;
     }
 
-    public void setEmployee_id(String employee_id) {
-        this.employee_id = employee_id;
+    public void setEmployeeid(String employeeid) {
+        this.employeeid = employeeid;
     }
 
-    public String getModified_person_id() {
-        return modified_person_id;
+    public String getModifiedpersonid() {
+        return modifiedpersonid;
     }
 
-    public void setModified_person_id(String modified_person_id) {
-        this.modified_person_id = modified_person_id;
+    public void setModifiedpersonid(String modifiedpersonid) {
+        this.modifiedpersonid = modifiedpersonid;
     }
 
-    public Date getCreated_time() {
-        return created_time;
+    public Date getCreatedtime() {
+        return createdtime;
     }
 
-    public void setCreated_time(Date created_time) {
-        this.created_time = created_time;
+    public void setCreatedtime(Date createdtime) {
+        this.createdtime = createdtime;
     }
 
-    public Date getModified_time() {
-        return modified_time;
+    public Date getModifiedtime() {
+        return modifiedtime;
     }
 
-    public void setModified_time(Date modified_time) {
-        this.modified_time = modified_time;
+    public void setModifiedtime(Date modifiedtime) {
+        this.modifiedtime = modifiedtime;
     }
 
     public String getState() {
@@ -71,12 +71,12 @@ public class Orders {
         this.state = state;
     }
 
-    public String getStart_location() {
-        return start_location;
+    public String getStartlocation() {
+        return startlocation;
     }
 
-    public void setStart_location(String start_location) {
-        this.start_location = start_location;
+    public void setStartlocation(String startlocation) {
+        this.startlocation = startlocation;
     }
 
     public String getDestination() {
@@ -106,14 +106,14 @@ public class Orders {
     @Override
     public String toString() {
         return "Orders{" +
-                "order_id='" + order_id + '\'' +
-                ", user_id='" + user_id + '\'' +
-                ", employee_id='" + employee_id + '\'' +
-                ", modified_person_id='" + modified_person_id + '\'' +
-                ", created_time=" + created_time +
-                ", modified_time=" + modified_time +
+                "orderid='" + orderid + '\'' +
+                ", userid='" + userid + '\'' +
+                ", employeeid='" + employeeid + '\'' +
+                ", modifiedpersonid='" + modifiedpersonid + '\'' +
+                ", createdtime=" + createdtime +
+                ", modifiedtime=" + modifiedtime +
                 ", state='" + state + '\'' +
-                ", start_location='" + start_location + '\'' +
+                ", startlocation='" + startlocation + '\'' +
                 ", destination='" + destination + '\'' +
                 ", deleted=" + deleted +
                 ", amount=" + amount +
