@@ -32,11 +32,35 @@
           </el-icon>
           用户
         </el-menu-item>
+        <el-menu-item index="/orders">
+          <el-icon>
+            <Order/>
+          </el-icon>
+          订单
+        </el-menu-item>
         <el-menu-item index="/goods">
           <el-icon>
             <Box/>
           </el-icon>
           商品
+        </el-menu-item>
+        <el-menu-item index="/employee">
+          <el-icon>
+            <Box/>
+          </el-icon>
+          雇员
+        </el-menu-item>
+        <el-menu-item index="/administrator">
+          <el-icon>
+            <Box/>
+          </el-icon>
+          管理员
+        </el-menu-item>
+        <el-menu-item index="/vehicle">
+        <el-icon>
+          <Box/>
+        </el-icon>
+          车辆
         </el-menu-item>
       </el-sub-menu>
       <el-menu-item index="/addGoodsView">

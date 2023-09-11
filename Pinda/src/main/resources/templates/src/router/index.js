@@ -1,5 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import userView from '../views/UserView.vue'
+import UserView from '../views/UserView.vue'
+import OrderView from '../views/OrderView.vue'
+import EmployeeView from '../views/EmployeeView.vue'
+import AdministratorView from '../views/AdministratorView.vue'
+// import TransferView from '../views/TransferView.vue'
+import VehicleView from '../views/VehicleView.vue'
 import DataView from "@/views/DataView";
 import GoodsView from "@/views/GoodsView";
 import UploadImage from "@/components/Upload/UploadImage";
@@ -16,8 +21,33 @@ const routes = [
   },
   {
     path: '/user',
-    name: 'userView',
-    component: userView
+    name: 'UserView',
+    component: UserView
+  },
+  {
+    path: '/orders',
+    name: 'OrderView',
+    component: OrderView
+  },
+  {
+    path: '/employee',
+    name: 'EmployeeView',
+    component: EmployeeView
+  },
+  {
+    path: '/administrator',
+    name: 'AdministratorView',
+    component: AdministratorView
+  },
+  // {
+  //   path: '/transfer',
+  //   name: 'TransferView',
+  //   component: TransferView
+  // },
+  {
+    path: '/vehicle',
+    name: 'VehicleView',
+    component: VehicleView
   },
   {
     path: '/data',

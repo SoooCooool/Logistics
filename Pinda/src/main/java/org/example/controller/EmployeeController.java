@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping(value="/employee")
+@RequestMapping(value="/api/employee")
 public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
     private EmployeeController employeeController;
 
-    @GetMapping(value = "/findall")
+    @GetMapping(value = "/queryAll")
     @ResponseBody
     public Result findall(){
         List<Employee> employees = employeeService.findall();
@@ -39,7 +39,7 @@ public class EmployeeController {
         employeeService.insertemployee(employee);
         return Result.success("success");
     }
-    @GetMapping(value = "/findbyid")
+    @GetMapping(value = "/queryById")
     @ResponseBody
     public Result findbyid(@RequestParam(value = "id") String id, Model model){
         Employee employee = employeeService.findbyid(id);
@@ -52,7 +52,7 @@ public class EmployeeController {
         employeeService.updateemployeebyid(employee);
         return Result.success("success");
     }
-    @PostMapping(value = "/deletebyid")
+    @PostMapping(value = "/deleteById")
     @ResponseBody
     public Result<String> deletebyid(@RequestParam(value = "id") String id){
         employeeService.deleteemployeebyid(id);

@@ -3,7 +3,7 @@ import java.util.Date;
 
 public class Administrator {
     private String administratorid;
-    private Date createtime = new Date();
+    private Date createdtime = new Date();
     private Date modifiedtime = new Date();
     private String name;
     private String password;
@@ -40,20 +40,20 @@ public class Administrator {
         this.password = password;
     }
 
-    public String getAdminid() {
+    public String getAdministratorid() {
         return administratorid;
     }
 
-    public void setAdminid(String adminid) {
-        this.administratorid = adminid;
+    public void setAdministratorid(String adminid) {
+        this.administratorid = administratorid;
     }
 
-    public Date getCreateDate() {
-        return createtime;
+    public Date getCreatedtime() {
+        return createdtime;
     }
 
-    public void setCreateDate(Date createDate) {
-        this.createtime = createDate;
+    public void setCreatedtime(Date createdtime) {
+        this.createdtime = createdtime;
     }
 
     public Date getModifiedtime() {
@@ -80,12 +80,12 @@ public class Administrator {
         this.permissions = permissions;
     }
 
-    public Integer getDelete() {
+    public Integer getDeleted() {
         return deleted;
     }
 
-    public void setDelete(Integer delete) {
-        this.deleted = delete;
+    public void setDeleted(Integer deleted) {
+        this.deleted = deleted;
     }
 
     private Integer permissions;
@@ -94,7 +94,7 @@ public class Administrator {
     public String toString() {
         return "Administrator{" +
                 "administratorid='" + administratorid +
-                "', createtime=" + createtime +
+                "', createdtime=" + createdtime +
                 ", modifiedtime=" + modifiedtime +
                 ", name='" + name +
                 "', permissions=" + permissions +

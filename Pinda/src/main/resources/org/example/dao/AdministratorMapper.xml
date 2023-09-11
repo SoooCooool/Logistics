@@ -14,8 +14,6 @@
         <!--表字段的主键
         property:类中的属性名
         column:表中的字段名
-
-
         -->
         <result property="administratorid" column="administratorid"></result>
         <result property="createdtime" column="createdtime"></result>
@@ -32,7 +30,7 @@
 
     <select id="getAdministratorbyId" resultType="org.example.pojo.Administrator">
         select * from administrator
-        where administrator_id = #{administrator_id}
+        where administratorid = #{administratorid}
     </select>
 
     <insert id="addAdministrator" parameterType="org.example.pojo.Administrator">

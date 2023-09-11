@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
-@RequestMapping(value="/Vehicle")
+@RequestMapping(value="/api/vehicle")
 public class VehicleController {
     @Autowired(required=false)
     VehicleService vehicleService;
