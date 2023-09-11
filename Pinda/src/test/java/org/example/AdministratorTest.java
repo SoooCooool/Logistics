@@ -65,11 +65,11 @@ public class AdministratorTest {
         //3.执行添加操作
         // 3.1 测试数据（创建Employee对象）
         Administrator administrator = new Administrator();
-        administrator.setAdmin_id("M194321");
+        administrator.setAdminid("M194321");
         Date date1=new Date(153,5,7);
         Date date2=new Date(133,9,7);
-        administrator.setCreate_Date(date1);
-        administrator.setModified_time(date2);
+        administrator.setCreateDate(date1);
+        administrator.setModifiedtime(date2);
         administrator.setName("胡英俊");
         administrator.setPermissions(3);
         administrator.setDelete(0);
@@ -107,11 +107,11 @@ public class AdministratorTest {
         //3.执行添加操作
         // 3.1 测试数据（创建Administrator对象）
         Administrator administrator = new Administrator();
-        administrator.setAdmin_id("M104321");
+        administrator.setAdminid("M104321");
         Date date1=new Date(118,1,2);
         Date date2=new Date(123,9,7);
-        administrator.setCreate_Date(date1);
-        administrator.setModified_time(date2);
+        administrator.setCreateDate(date1);
+        administrator.setModifiedtime(date2);
         administrator.setName("张绍刚");
         administrator.setPermissions(4);
         administrator.setDelete(0);

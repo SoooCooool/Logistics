@@ -50,9 +50,9 @@ public class VehicleTest {/**
             //3.执行添加操作
             // 3.1 测试数据（创建Employee对象）
             Vehicle vehicle = new Vehicle();
-            vehicle.setVehicle_id("C111");
-            vehicle.setDriver_id("E123456");
-            vehicle.setTransfer_belong("华北");
+            vehicle.setVehicleid("C111");
+            vehicle.setDriverid("E123456");
+            vehicle.setTransferbelong("华北");
             // 3.2 添加员工信息
             vehicleMapper.addVehicle(vehicle);
             // 注意（提交事务）
@@ -73,9 +73,9 @@ public class VehicleTest {/**
             //3.执行添加操作
             // 3.1 测试数据（创建Vehicle对象）
             Vehicle vehicle = new Vehicle();
-            vehicle.setVehicle_id("C111");
-            vehicle.setTransfer_belong("西北");
-            vehicle.setDriver_id("E123001");
+            vehicle.setVehicleid("C111");
+            vehicle.setTransferbelong("西北");
+            vehicle.setDriverid("E123001");
             // 3.2 修改员工信息
             vehicleMapper.updateVehicle(vehicle);
             // 注意（提交事务）

@@ -32,15 +32,15 @@ public class UserTest {
 
         SqlSession sqlSession = SqlSessionUtil.getSqlSession();
         User user=new User();
-        user.setUser_id("U000000");
+        user.setUserid("U000000");
         user.setName("hhh");
         user.setPhonenumber(1213234545);
         user.setLocation("wuhan");
         user.setPermissions(1);
         Date date1 = new Date(2022,12,3);
         Date date2 = new Date(2022,12,8);
-        user.setCreated_time(date1);
-        user.setModified_time(date2);
+        user.setCreatedtime(date1);
+        user.setModifiedtime(date2);
 
         sqlSession.insert("org.example.dao.UserMapper.Adduser",user);
         sqlSession.commit();

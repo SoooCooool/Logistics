@@ -66,16 +66,16 @@ public class EmployeeTest {
             EmployeeMapper employeeMapper =
                     sqlSession.getMapper(EmployeeMapper.class);
             Employee employee = new Employee();
-            employee.setEmployee_id("11");
+            employee.setEmployeeid("11");
             employee.setName("11");
             Date i = new Date(153,9,8);
-            employee.setCreated_time(i);
+            employee.setCreatedtime(i);
             employee.setDeleted(0);
             employee.setOccupation("派送员");
             employee.setPermissions(2);
             employee.setPhonenumber(1234567891);
             Date o = new Date(153,9,11);
-            employee.setModified_time(o);
+            employee.setModifiedtime(o);
             employeeMapper.insert(employee);
             sqlSession.commit();
             sqlSession.close();
@@ -96,16 +96,16 @@ public class EmployeeTest {
             EmployeeMapper employeeMapper =
                     sqlSession.getMapper(EmployeeMapper.class);
             Employee employee = new Employee();
-            employee.setEmployee_id("11");
+            employee.setEmployeeid("11");
             employee.setName("22");
             Date i = new Date(154,10,9);
-            employee.setCreated_time(i);
+            employee.setCreatedtime(i);
             employee.setDeleted(1);
             employee.setOccupation("派送员1");
             employee.setPermissions(2);
             employee.setPhonenumber(1234567890);
             Date o = new Date(154,10,12);
-            employee.setModified_time(o);
+            employee.setModifiedtime(o);
             employeeMapper.update(employee);
             sqlSession.commit();
             sqlSession.close();

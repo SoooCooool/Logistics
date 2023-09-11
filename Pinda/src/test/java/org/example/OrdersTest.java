@@ -33,19 +33,19 @@ public class OrdersTest {
 
         SqlSession sqlSession = SqlSessionUtil.getSqlSession();
         Orders orders=new Orders();
-        orders.setOrder_id("D002");
-        orders.setEmployee_id("E123456");
-        orders.setUser_id("U123456");
-        orders.setModified_person_id("M123456");
+        orders.setOrderid("D002");
+        orders.setEmployeeid("E123456");
+        orders.setUserid("U123456");
+        orders.setModifiedpersonid("M123456");
         orders.setDestination("wuhan");
-        orders.setStart_location("anhui");
+        orders.setStartlocation("anhui");
         orders.setState("已签收");
         orders.setAmount(99);
         orders.setDeleted(0);
         Date date1 = new Date(2022,12,3);
         Date date2 = new Date(2022,12,8);
-        orders.setCreated_time(date1);
-        orders.setModified_time(date2);
+        orders.setCreatedtime(date1);
+        orders.setModifiedtime(date2);
 
         sqlSession.insert("org.example.dao.OrdersMapper.Addorders",orders);
         sqlSession.commit();
