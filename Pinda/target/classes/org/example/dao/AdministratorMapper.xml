@@ -17,9 +17,9 @@
 
 
         -->
-        <result property="administrator_id" column="administrator_id"></result>
-        <result property="created_time" column="created time"></result>
-        <result property="modified_time" column="modified time"></result>
+        <result property="administratorid" column="administratorid"></result>
+        <result property="createdtime" column="createdtime"></result>
+        <result property="modifiedtime" column="modifiedtime"></result>
         <result property="name" column="name"></result>
         <result property="permissions" column="permissions"></result>
         <result property="deleted" column="deleted"></result>
@@ -36,18 +36,18 @@
     </select>
 
     <insert id="addAdministrator" parameterType="org.example.pojo.Administrator">
-        insert into administrator(administrator_id,created_time,modified_time,name,permissions,deleted)
-        values (#{administrator_id},#{create_time},#{modified_time},#{name},#{permissions},#{deleted})
+        insert into administrator(administratorid,createdtime,modifiedtime,name,permissions,deleted)
+        values (#{administratorid},#{createtime},#{modifiedtime},#{name},#{permissions},#{deleted})
     </insert>
 
     <update id="deleteAdministrator">
         update administrator set deleted=1
-        where administrator_id = #{administrator_id}
+        where administratorid = #{administratorid}
     </update>
 
     <update id="updateAdministrator" parameterType="org.example.pojo.Administrator">
-        update administrator set created_time=#{create_time},modified_time=#{modified_time},name=#{name},permissions=#{permissions},deleted=#{deleted}
-        where administrator_id = #{administrator_id}
+        update administrator set createdtime=#{createtime},modifiedtime=#{modifiedtime},name=#{name},permissions=#{permissions},deleted=#{deleted}
+        where administratorid = #{administratorid}
     </update>
 
     <select id="findAdministratorByNameAndPermissions" resultType="org.example.pojo.Administrator">

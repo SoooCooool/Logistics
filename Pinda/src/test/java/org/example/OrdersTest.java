@@ -39,7 +39,7 @@ public class OrdersTest {
         orders.setModifiedpersonid("M123456");
         orders.setDestination("wuhan");
         orders.setStartlocation("anhui");
-        orders.setState("已签收");
+        orders.setPresentstate("已签收");
         orders.setAmount(99);
         orders.setDeleted(0);
         Date date1 = new Date(2022,12,3);

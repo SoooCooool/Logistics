@@ -17,9 +17,9 @@
 
 
         -->
-        <result property="vehicle_id" column="vehicle_id"></result>
-        <result property="transfer_belong" column="transfer_belong"></result>
-        <result property="driver_id" column="driver_id"></result>
+        <result property="vehicleid" column="vehicleid"></result>
+        <result property="transferbelong" column="transferbelong"></result>
+        <result property="driverid" column="driverid"></result>
     </resultMap>
 
     <select id="findAll" resultMap="VehicleResultMap" resultType="org.example.pojo.Vehicle">
@@ -28,22 +28,22 @@
 
     <select id="getVehiclebyId" resultType="org.example.pojo.Vehicle">
         select * from vehicle
-        where vehicle_id = #{vehicle_id}
+        where vehicleid = #{vehicleid}
     </select>
 
     <insert id="addVehicle" parameterType="org.example.pojo.Vehicle">
-        insert into vehicle(vehicle_id,transfer_belong,driver_id)
-        values (#{vehicle_id},#{transfer_belong},#{driver_id})
+        insert into vehicle(vehicleid,transferbelong,driverid)
+        values (#{vehicleid},#{transferbelong},#{driverid})
     </insert>
 
     <update id="deleteVehicle">
         delete from vehicle
-        where vehicle_id = #{vehicle_id}
+        where vehicleid = #{vehicleid}
     </update>
 
     <update id="updateVehicle" parameterType="org.example.pojo.Vehicle">
-        update vehicle set transfer_belong=#{transfer_belong},driver_id=#{driver_id}
-        where vehicle_id = #{vehicle_id}
+        update vehicle set transferbelong=#{transferbelong},driverid=#{driverid}
+        where vehicleid = #{vehicleid}
     </update>
 
 </mapper>

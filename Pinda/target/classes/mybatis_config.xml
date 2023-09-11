@@ -16,10 +16,10 @@
                 -->
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
                 <!--数据库连接字符串-->
-                <property name="url" value="jdbc:mysql://localhost:3306/logistics"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/logistics?useSSL=false"/>
                 <!--用户名-->
                 <property name="username" value="root"/>
-                <property name="password" value="1236548879a"/>
+                <property name="password" value="123456"/>
             </dataSource>
         </environment>
     </environments>
@@ -29,7 +29,6 @@
         <mapper resource="org/example/dao/OrdersMapper.xml"/>
         <mapper resource="org/example/dao/AdministratorMapper.xml"/>
         <mapper resource="org/example/dao/EmployeeMapper.xml"/>
-        <mapper resource="org/example/dao/MerchandiseMapper.xml"/>
         <mapper resource="org/example/dao/VehicleMapper.xml"/>
         <mapper resource="org/example/dao/UserMapper.xml"/>
         <mapper resource="org/example/dao/TransferMapper.xml"/>

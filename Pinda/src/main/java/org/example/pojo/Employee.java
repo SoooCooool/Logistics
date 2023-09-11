@@ -9,8 +9,18 @@ import java.util.Date;
  *      empolyee_id,created_time,modified_time,name,phonenumber,occupation,permission,deleted
  */
 public class Employee {
+    private String password;
     private String employeeid;
     private Date createdtime;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     private Date modifiedtime;
     private String name;
     private int phonenumber;

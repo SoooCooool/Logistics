@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Orders {
     private String orderid;
+    private String password;
     private String userid;
     private String employeeid;
     private String modifiedpersonid;
@@ -17,6 +18,15 @@ public class Orders {
     private Date arrivetransfertime;
     private Date starttime;
     private Date finaltime;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     private String presentlocation;
     private String presentstate;
     private Integer weight;

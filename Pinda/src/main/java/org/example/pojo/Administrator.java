@@ -6,7 +6,39 @@ public class Administrator {
     private Date createtime = new Date();
     private Date modifiedtime = new Date();
     private String name;
+    private String password;
 
+    public String getAdministratorid() {
+        return administratorid;
+    }
+
+    public void setAdministratorid(String administratorid) {
+        this.administratorid = administratorid;
+    }
+
+    public Integer getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(Integer deleted) {
+        this.deleted = deleted;
+    }
+
+    public Date getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getAdminid() {
         return administratorid;

@@ -7,7 +7,7 @@ module.exports = {
     port: 80,
     proxy:{
       '/api':{
-        target: 'http://buy.csicn.cn:8333/api',
+        target: 'http://buy.csi.cn:8333/api',
         pathRewrite: {
           '/api': ''
         },

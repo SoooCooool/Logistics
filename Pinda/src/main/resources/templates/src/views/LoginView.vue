@@ -11,35 +11,61 @@
           <label class="label" for="password">密码：</label>
           <input class="input" type="password" id="password" v-model="password">
         </div>
-        <div class="form-group">
-          <button class="btn" type="submit">登录</button>
+
+        <div>
+          <h3>选择身份</h3>
+          <select v-model="selectedOption">
+
+            <option value="admin">管理员</option>
+            <option value="employee">雇员</option>
+            <option value="user">用户</option>
+          </select>
+
         </div>
+        <button @click="loginClick">登录</button>
       </form>
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name:'loginForm',
   data() {
     return {
       username: '',
       password: '',
+      type: '',
     };
   },
   methods: {
-    submitForm() {
-      if (!this.username || !this.password) {
-        alert('用户名和密码不能为空');
-        return;
-      }
-      // 在这里提交表单
-      console.log(`用户名：${this.username}，密码：${this.password}`);
-      this.$router.push({ path: '/data' });
+      loginClick() {
+        console.log("11");
+             if (!this.username || !this.password ) {
+               alert('用户名和密码不能为空');
+               return;
+             }
+             axios.post('http://localhost:8080/log/logon', this.password,this.username,this.type)
+             // axios.post('http://localhost:8080/log/logon', this.username)
+             // axios.post('http://localhost:8080/log/logon', this.type)
+             //axios.post('http://localhost:8080/log/login', this.formData)
+                 .then(response => {
+                   // Handle success response from the backend
+                   console.log('Backend response:', response.data);
+                 })
+                 .catch(error => {
+                   // Handle error response or network error
+                   console.error('Error:', error);
+                 });
+      },
     },
   },
 };
+
+
+
 </script>
 
 <style scoped>

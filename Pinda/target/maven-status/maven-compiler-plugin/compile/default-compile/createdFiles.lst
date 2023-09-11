@@ -1,7 +1,0 @@
-org\example\dao\TransferMapper.class
-org\example\pojo\User.class
-org\example\pojo\Orders.class
-org\example\pojo\Transfer.class
-org\example\dao\UserMapper.class
-org\example\utils\SqlSessionUtil.class
-org\example\service\OrdersService.class

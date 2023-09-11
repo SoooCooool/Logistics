@@ -24,9 +24,10 @@ public class EmployeeController {
     @ResponseBody
     public Result findall(){
         List<Employee> employees = employeeService.findall();
-        /*model.addAttribute("Employee",employees);*/
         return Result.success(employees);
+
     }
+
     @PostMapping("/toinsert")
     @ResponseBody
     public String toinsert(){
