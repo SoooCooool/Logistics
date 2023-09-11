@@ -15,7 +15,7 @@ public interface OrdersMapper {
 
     List<Orders> QueryordersAll();
 
-    List<Orders> Queryorders(@Param("orderid")String orderid, @Param("userid")String userid, @Param("employeeid")String employeeid,
+    List<Orders> Queryorders(@Param("orderid")String orderid, @Param("userid")String userid, @Param("employeeid")String employeeid,@Param("kind") String kind,@Param("present_state") String presentstate,
                              @Param("state")String state, @Param("startlocation")String startlocation, @Param("destination")String destination, @Param("amount")Integer amount);
 
     void Addorders(Orders orders);

@@ -9,13 +9,96 @@ public class Orders {
     private String modifiedpersonid;
     private Date createdtime;
     private Date modifiedtime;
-    private String state;
     private String startlocation;
     private String destination;
     private Integer deleted;
     private Integer amount;
+    private String kind;
+    private Date arrivetransfertime;
+    private Date starttime;
+    private Date finaltime;
+    private String presentlocation;
+    private String presentstate;
+    private Integer weight;
 
-    public String getOrderid() {
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "orderid='" + orderid + '\'' +
+                ", userid='" + userid + '\'' +
+                ", employeeid='" + employeeid + '\'' +
+                ", modifiedpersonid='" + modifiedpersonid + '\'' +
+                ", createdtime=" + createdtime +
+                ", modifiedtime=" + modifiedtime +
+                ", startlocation='" + startlocation + '\'' +
+                ", destination='" + destination + '\'' +
+                ", deleted=" + deleted +
+                ", amount=" + amount +
+                ", kind='" + kind + '\'' +
+                ", arrivetransfertime=" + arrivetransfertime +
+                ", starttime=" + starttime +
+                ", finaltime=" + finaltime +
+                ", presentlocation='" + presentlocation + '\'' +
+                ", presentstate='" + presentstate + '\'' +
+                ", weight=" + weight +
+                '}';
+    }
+
+    public String getKind() {
+        return kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
+    }
+
+    public Date getArrivetransfertime() {
+        return arrivetransfertime;
+    }
+
+    public void setArrivetransfertime(Date arrivetransfertime) {
+        this.arrivetransfertime = arrivetransfertime;
+    }
+
+    public Date getStarttime() {
+        return starttime;
+    }
+
+    public void setStarttime(Date starttime) {
+        this.starttime = starttime;
+    }
+
+    public Date getFinaltime() {
+        return finaltime;
+    }
+
+    public void setFinaltime(Date finaltime) {
+        this.finaltime = finaltime;
+    }
+
+    public String getPresentlocation() {
+        return presentlocation;
+    }
+
+    public void setPresentlocation(String presentlocation) {
+        this.presentlocation = presentlocation;
+    }
+
+    public String getPresentstate() {
+        return presentstate;
+    }
+
+    public void setPresentstate(String presentstate) {
+        this.presentstate = presentstate;
+    }
+
+    public Integer getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
+    }public String getOrderid() {
         return orderid;
     }
 
@@ -63,13 +146,7 @@ public class Orders {
         this.modifiedtime = modifiedtime;
     }
 
-    public String getState() {
-        return state;
-    }
 
-    public void setState(String state) {
-        this.state = state;
-    }
 
     public String getStartlocation() {
         return startlocation;
@@ -103,20 +180,5 @@ public class Orders {
         this.amount = amount;
     }
 
-    @Override
-    public String toString() {
-        return "Orders{" +
-                "orderid='" + orderid + '\'' +
-                ", userid='" + userid + '\'' +
-                ", employeeid='" + employeeid + '\'' +
-                ", modifiedpersonid='" + modifiedpersonid + '\'' +
-                ", createdtime=" + createdtime +
-                ", modifiedtime=" + modifiedtime +
-                ", state='" + state + '\'' +
-                ", startlocation='" + startlocation + '\'' +
-                ", destination='" + destination + '\'' +
-                ", deleted=" + deleted +
-                ", amount=" + amount +
-                '}';
-    }
+
 }

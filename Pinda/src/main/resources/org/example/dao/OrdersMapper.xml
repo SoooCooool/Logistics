@@ -8,15 +8,17 @@
 
     <insert id="Addorders">
         insert into orders (orderid,userid,employeeid,modifiedpersonid,createdtime,modifiedtime,
-                               state,startlocation,destination,deleted,amount)
+                            kind,weight,arrivetransfertime,starttime,finaltime,presentlocation,presentstate,startlocation,destination,deleted,amount)
         values (#{orderid},#{userid},#{employeeid},#{modifiedpersonid},#{createdtime},#{modifiedtime},
-                #{state},#{startlocation},#{destination},#{deleted},#{amount})
+                #{orderid},#{kind},#{weight},#{arrivetransfertime},#{starttime},#{finaltime},#{presentlocation},#{presentstate},#{startlocation},#{destination},#{deleted},#{amount})
     </insert>
 
     <update id="Updateorders">
         update orders
         set userid=#{userid},employeeid=#{employeeid},modifiedpersonid=#{modifiedpersonid},createdtime=#{createdtime},modifiedtime=#{modifiedtime},
-            state=#{state},startlocation=#{startlocation},destination=#{destination},deleted=#{deleted},amount=#{amount}
+            state=#{state},startlocation=#{startlocation},destination=#{destination},deleted=#{deleted},amount=#{amount},kind = #{kind},
+            weight = #{weight},arrivetransfertime = #{arrivetransfertime},starttime = #{starttime},finaltime = #{finaltime},
+            presentlocation = #{present_location},presentstate = #{presentstate}
         where orderid = #{orderid}
     </update>
 
