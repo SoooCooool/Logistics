@@ -32,7 +32,7 @@
 
     <select id="getAdministratorbyId" resultType="org.example.pojo.Administrator">
         select * from administrator
-        where administrator_id = #{administrator_id}
+        where administratorid = #{administratorid}
     </select>
 
     <insert id="addAdministrator" parameterType="org.example.pojo.Administrator">
