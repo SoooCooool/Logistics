@@ -7,33 +7,33 @@
 
 
     <insert id="Addorders">
-        insert into orders (order_id,user_id,employee_id,modified_person_id,created_time,modified_time,
-                               state,start_location,destination,deleted,amount)
-        values (#{order_id},#{user_id},#{employee_id},#{modified_person_id},#{created_time},#{modified_time},
-                #{state},#{start_location},#{destination},#{deleted},#{amount})
+        insert into orders (orderid,userid,employeeid,modifiedpersonid,createdtime,modifiedtime,
+                               state,startlocation,destination,deleted,amount)
+        values (#{orderid},#{userid},#{employeeid},#{modifiedpersonid},#{createdtime},#{modifiedtime},
+                #{state},#{startlocation},#{destination},#{deleted},#{amount})
     </insert>
 
     <update id="Updateorders">
         update orders
-        set user_id=#{user_id},employee_id=#{employee_id},modified_person_id=#{modified_person_id},created_time=#{created_time},modified_time=#{modified_time},
-            state=#{state},start_location=#{start_location},destination=#{destination},deleted=#{deleted},amount=#{amount}
-        where order_id = #{order_id}
+        set userid=#{userid},employeeid=#{employeeid},modifiedpersonid=#{modifiedpersonid},createdtime=#{createdtime},modifiedtime=#{modifiedtime},
+            state=#{state},startlocation=#{startlocation},destination=#{destination},deleted=#{deleted},amount=#{amount}
+        where orderid = #{orderid}
     </update>
 
     <delete id="DeleteordersById">
         delete from orders
-        where order_id = #{order_id}
+        where orderid = #{orderid}
     </delete>
     <delete id="DeleteordersByIds">
         delete from orders
-        where order_id in
-        <foreach collection="list" open="(" close=")" separator="," item="order_id">
-            #{order_id}
+        where orderid in
+        <foreach collection="list" open="(" close=")" separator="," item="orderid">
+            #{orderid}
         </foreach>
     </delete>
 
     <select id="QueryordersById" resultType="org.example.pojo.Orders">
-        select * from orders where order_id = #{order_id}
+        select * from orders where orderid = #{orderid}
     </select>
     <select id="QueryordersAll" resultType="org.example.pojo.Orders">
         select * from orders
@@ -43,20 +43,20 @@
         select * from orders
         <where>
             <!--添加if条件如果参数为空则不拼接sql-->
-            <if test="order_id != null and order_id != '' ">
-                and order_id like concat('%',#{order_id},'%')
+            <if test="orderid != null and orderid != '' ">
+                and orderid like concat('%',#{orderid},'%')
             </if>
-            <if test="user_id != null and user_id != '' ">
-                and user_id like concat('%',#{user_id},'%')
+            <if test="userid != null and userid != '' ">
+                and userid like concat('%',#{userid},'%')
             </if>
-            <if test="employee_id != null and employee_id != '' ">
-                and employee_id like concat('%',#{employee_id},'%')
+            <if test="employeeid != null and employeeid != '' ">
+                and employeeid like concat('%',#{employeeid},'%')
             </if>
             <if test="state != null and state != '' ">
                 and state like concat('%',#{state},'%')
             </if>
-            <if test="start_location != null and start_location != '' ">
-                and start_location like concat('%',#{start_location},'%')
+            <if test="startlocation != null and startlocation != '' ">
+                and startlocation like concat('%',#{startlocation},'%')
             </if>
             <if test="destination != null and destination != '' ">
                 and destination like concat('%',#{destination},'%')

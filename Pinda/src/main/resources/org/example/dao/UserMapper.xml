@@ -7,32 +7,32 @@
 
 
     <insert id="Adduser">
-        insert into user (user_id,name,created_time,modified_time,location,phonenumber,permissions)
-        values (#{user_id},#{name},#{created_time},#{modified_time},#{location},#{phonenumber},#{permissions})
+        insert into user (userid,name,createdtime,modifiedtime,location,phonenumber,permissions)
+        values (#{userid},#{name},#{createdtime},#{modifiedtime},#{location},#{phonenumber},#{permissions})
     </insert>
 
     <update id="Updateuser">
         update user
-        set name=#{name},created_time=#{created_time},modified_time=#{modified_time},location=#{location},
+        set name=#{name},createdtime=#{createdtime},modifiedtime=#{modifiedtime},location=#{location},
             phonenumber=#{phonenumber},permissions=#{permissions}
         where user_id=#{user_id}
     </update>
 
     <delete id="DeleteuserById">
         delete from user
-        where user_id=#{user_id}
+        where userid=#{userid}
     </delete>
 
     <select id="DeleteuserByIds" resultType="org.example.pojo.User">
         delete from user
-        where user_id in
-        <foreach collection="list" open="(" close=")" separator="," item="user_id">
-            #{user_id}
+        where userid in
+        <foreach collection="list" open="(" close=")" separator="," item="userid">
+            #{userid}
         </foreach>
     </select>
     <select id="QueryuserById" resultType="org.example.pojo.User">
         select * from user
-        where user_id = #{user_id}
+        where userid = #{userid}
     </select>
     <select id="QueryuserAll" resultType="org.example.pojo.User">
         select * from user
@@ -42,14 +42,14 @@
         select * from user
         <where>
             <!--添加if条件如果参数为空则不拼接sql-->
-            <if test="user_id != null and user_id != '' ">
-                and user_id like concat('%',#{user_id},'%')
+            <if test="userid != null and userid != '' ">
+                and userid like concat('%',#{userid},'%')
             </if>
             <if test="name != null and name != '' ">
                 and name like concat('%',#{name},'%')
             </if>
-            <if test="created_time != null and created_time != '' ">
-                and created_time like concat('%',#{created_time},'%')
+            <if test="createdtime != null and createdtime != '' ">
+                and createdtime like concat('%',#{createdtime},'%')
             </if>
             <if test="location != null and location != '' ">
                 and location like concat('%',#{location},'%')

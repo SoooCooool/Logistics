@@ -11,22 +11,22 @@
     -->
 
     <insert id="insert">
-        insert into merchandise (order_id,kind,weight,arrive_transfer_time,start_time,final_time,present_location,present_state)values(#{order_id},#{kind},#{weight},#{arrive_transfer_time},#{start_time},#{final_time},#{present_location},#{present_state})
+        insert into merchandise (orderid,kind,weight,arrivetransfertime,starttime,finaltime,presentlocation,presentstate)values(#{orderid},#{kind},#{weight},#{arrivetransfertime},#{starttime},#{finaltime},#{presentlocation},#{presentstate})
     </insert>
     <delete id="delete">
         delete from merchandise where order_id = #{order_id}
     </delete>
     <update id="update">
-        update merchandise set kind = #{kind},weight = #{weight},arrive_transfer_time = #{arrive_transfer_time},start_time = #{start_time},final_time = #{final_time},present_location = #{present_location},present_state = #{present_state} where order_id = #{order_id}
+        update merchandise set kind = #{kind},weight = #{weight},arrivetransfertime = #{arrivetransfertime},starttime = #{starttime},finaltime = #{finaltime},presentlocation = #{present_location},presentstate = #{presentstate} where orderid = #{orderid}
     </update>
     <select id="findall" resultType="org.example.pojo.Merchandise">
         select * from merchandise
     </select>
     <select id="findbyid" resultType="org.example.pojo.Merchandise">
-        select * from merchandise where order_id = #{order_id}
+        select * from merchandise where orderid = #{orderid}
     </select>
     <select id="findMerchandisebykindandstate" resultType="org.example.pojo.Merchandise">
-        select * from merchandise where kind like #{kind} and present_state = #{present_state}
+        select * from merchandise where kind like #{kind} and presentstate = #{presentstate}
     </select>
 
 </mapper>

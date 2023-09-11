@@ -11,16 +11,16 @@
     -->
 
     <insert id="insert">
-        insert into employee (employee_id,created_time,modified_time,name,phonenumber,occupation,permissions,deleted) values(#{employee_id},#{created_time},#{modified_time},#{name},#{phonenumber},#{occupation},#{permissions},#{deleted})
+        insert into employee (employeeid,createdtime,modifiedtime,name,phonenumber,occupation,permissions,deleted) values(#{employeeid},#{createdtime},#{modifiedtime},#{name},#{phonenumber},#{occupation},#{permissions},#{deleted})
     </insert>
     <delete id="delete">
-        delete from employee where employee_id = #{employee_id}
+        delete from employee where employeeid = #{employeeid}
     </delete>
     <update id="update">
-        update employee set created_time = #{created_time},modified_time = #{modified_time},name = #{name},phonenumber = #{phonenumber},occupation = #{occupation},permissions = #{permissions},deleted = #{deleted} where employee_id = #{employee_id}
+        update employee set createdtime = #{createdtime},modifiedtime = #{modifiedtime},name = #{name},phonenumber = #{phonenumber},occupation = #{occupation},permissions = #{permissions},deleted = #{deleted} where employeeid = #{employeeid}
     </update>
     <select id="findbyid" resultType="org.example.pojo.Employee">
-        select * from employee where employee_id = #{employee_id}
+        select * from employee where employeeid = #{employeeid}
     </select>
     <select id="findall" resultType="org.example.pojo.Employee">
         select * from employee
@@ -30,20 +30,20 @@
         where
         <where>
             <!--??if????????????sql-->
-            <if test="employee_id != null and order_id != '' ">
-                and order_id like concat('%',#{order_id},'%')
+            <if test="employeeid != null and orderid != '' ">
+                and orderid like concat('%',#{orderid},'%')
             </if>
-            <if test="user_id != null and user_id != '' ">
-                and user_id like concat('%',#{user_id},'%')
+            <if test="userid != null and userid != '' ">
+                and userid like concat('%',#{userid},'%')
             </if>
-            <if test="employee_id != null and employee_id != '' ">
-                and employee_id like concat('%',#{employee_id},'%')
+            <if test="employeeid != null and employeeid != '' ">
+                and employeeid like concat('%',#{employeeid},'%')
             </if>
             <if test="state != null and state != '' ">
                 and state like concat('%',#{state},'%')
             </if>
-            <if test="start_location != null and start_location != '' ">
-                and start_location like concat('%',#{start_location},'%')
+            <if test="startlocation != null and startlocation != '' ">
+                and startlocation like concat('%',#{startlocation},'%')
             </if>
             <if test="destination != null and destination != '' ">
                 and destination like concat('%',#{destination},'%')

@@ -1,12 +1,12 @@
 server:
-  port: 8080
+  port: 8180
 
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/logistics
     username: root
-    password: 123456
+    password: 1236548879a
 
   devtools:
     remote:

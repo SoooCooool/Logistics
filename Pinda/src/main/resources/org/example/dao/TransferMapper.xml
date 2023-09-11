@@ -16,12 +16,12 @@
         column:表中的字段名
         -->
         <result property="transfer" column="location"></result>
-        <result property="dis_hb" column="dis_hb"></result>
-        <result property="dis_db" column="dis_db"></result>
-        <result property="dis_hd" column="dis_hd"></result>
-        <result property="dis_zn" column="dis_zn"></result>
-        <result property="dis_xn" column="dis_xn"></result>
-        <result property="dis_xb" column="dis_xb"></result>
+        <result property="dishb" column="dishb"></result>
+        <result property="disdb" column="disdb"></result>
+        <result property="dishd" column="dishd"></result>
+        <result property="diszn" column="diszn"></result>
+        <result property="disxn" column="disxn"></result>
+        <result property="disxb" column="disxb"></result>
     </resultMap>
 
     <select id="findAll" resultMap="TransferResultMap" resultType="org.example.pojo.Transfer">
