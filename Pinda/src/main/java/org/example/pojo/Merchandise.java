@@ -3,21 +3,21 @@ package org.example.pojo;
 import java.util.Date;
 
 public class Merchandise {
-    private String order_id;
+    private String orderid;
     private String kind;
-    private Date arrive_transfer_time;
-    private Date start_time;
-    private Date final_time;
-    private String present_location;
-    private String present_state;
+    private Date arrivetransfertime;
+    private Date starttime;
+    private Date finaltime;
+    private String presentlocation;
+    private String presentstate;
     private Integer weight;
 
-    public String getOrder_id() {
-        return order_id;
+    public String getOrderid() {
+        return orderid;
     }
 
-    public void setOrder_id(String order_id) {
-        this.order_id = order_id;
+    public void setOrderid(String orderid) {
+        this.orderid = orderid;
     }
 
     public String getKind() {
@@ -28,44 +28,44 @@ public class Merchandise {
         this.kind = kind;
     }
 
-    public Date getArrive_transfer_time() {
-        return arrive_transfer_time;
+    public Date getArrivetransfertime() {
+        return arrivetransfertime;
     }
 
-    public void setArrive_transfer_time(Date arrive_transfer_time) {
-        this.arrive_transfer_time = arrive_transfer_time;
+    public void setArrivetransfertime(Date arrivetransfertime) {
+        this.arrivetransfertime = arrivetransfertime;
     }
 
-    public Date getStart_time() {
-        return start_time;
+    public Date getStarttime() {
+        return starttime;
     }
 
-    public void setStart_time(Date start_time) {
-        this.start_time = start_time;
+    public void setStarttime(Date starttime) {
+        this.starttime = starttime;
     }
 
-    public Date getFinal_time() {
-        return final_time;
+    public Date getFinaltime() {
+        return finaltime;
     }
 
-    public void setFinal_time(Date final_time) {
-        this.final_time = final_time;
+    public void setFinaltime(Date finaltime) {
+        this.finaltime = finaltime;
     }
 
-    public String getPresent_location() {
-        return present_location;
+    public String getPresentlocation() {
+        return presentlocation;
     }
 
-    public void setPresent_location(String present_location) {
-        this.present_location = present_location;
+    public void setPresentlocation(String presentlocation) {
+        this.presentlocation = presentlocation;
     }
 
-    public String getPresent_state() {
-        return present_state;
+    public String getPresentstate() {
+        return presentstate;
     }
 
-    public void setPresent_state(String present_state) {
-        this.present_state = present_state;
+    public void setPresentstate(String presentstate) {
+        this.presentstate = presentstate;
     }
 
     public Integer getWeight() {
@@ -79,13 +79,13 @@ public class Merchandise {
     @Override
     public String toString() {
         return "Merchandise{" +
-                "order_id='" + order_id + '\'' +
+                "orderid='" + orderid + '\'' +
                 ", kind='" + kind + '\'' +
-                ", arrive_transfer_time=" + arrive_transfer_time +
-                ", start_time=" + start_time +
-                ", final_time=" + final_time +
-                ", present_location='" + present_location + '\'' +
-                ", present_state='" + present_state + '\'' +
+                ", arrivetransfertime=" + arrivetransfertime +
+                ", starttime=" + starttime +
+                ", finaltime=" + finaltime +
+                ", presentlocation='" + presentlocation + '\'' +
+                ", presentstate='" + presentstate + '\'' +
                 ", weight=" + weight +
                 '}';
     }

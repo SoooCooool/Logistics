@@ -32,6 +32,7 @@
         <mapper resource="org/example/dao/MerchandiseMapper.xml"/>
         <mapper resource="org/example/dao/VehicleMapper.xml"/>
         <mapper resource="org/example/dao/UserMapper.xml"/>
+        <mapper resource="org/example/dao/TransferMapper.xml"/>
     </mappers>
 
 </configuration>

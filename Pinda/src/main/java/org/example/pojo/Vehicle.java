@@ -1,43 +1,43 @@
 package org.example.pojo;
 
 public class Vehicle {
-    private String vehicle_id;
+    private String vehicleid;
 
     @Override
     public String toString() {
         return "Vehicle{" +
-                "vehicle_id='" + vehicle_id + '\'' +
-                ", transfer_belong='" + transfer_belong + '\'' +
-                ", driver_id='" + driver_id + '\'' +
+                "vehicleid='" + vehicleid + '\'' +
+                ", transferbelong='" + transferbelong + '\'' +
+                ", driverid='" + driverid + '\'' +
                 '}';
     }
 
-    public void setVehicle_id(String vehicle_id) {
-        this.vehicle_id = vehicle_id;
+    public void setVehicleid(String vehicleid) {
+        this.vehicleid = vehicleid;
     }
 
-    public void setTransfer_belong(String transfer_belong) {
-        this.transfer_belong = transfer_belong;
+    public void setTransferbelong(String transferbelong) {
+        this.transferbelong = transferbelong;
     }
 
-    public void setDriver_id(String driver_id) {
-        this.driver_id = driver_id;
+    public void setDriverid(String driverid) {
+        this.driverid = driverid;
     }
 
-    private String transfer_belong;
+    private String transferbelong;
 
-    public String getVehicle_id() {
-        return vehicle_id;
+    public String getVehicleid() {
+        return vehicleid;
     }
 
-    public String getTransfer_belong() {
-        return transfer_belong;
+    public String getTransferbelong() {
+        return transferbelong;
     }
 
-    public String getDriver_id() {
-        return driver_id;
+    public String getDriverid() {
+        return driverid;
     }
 
-    private String driver_id;
+    private String driverid;
 
 }

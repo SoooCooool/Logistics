@@ -2,12 +2,12 @@ package org.example.pojo;
 
 public class Transfer {
     private String transfer;
-    private Integer dis_hd;
-    private Integer dis_db;
-    private Integer dis_xb;
-    private Integer dis_hb;
-    private Integer dis_zn;
-    private Integer dis_xn;
+    private Integer dishd;
+    private Integer disdb;
+    private Integer disxb;
+    private Integer dishb;
+    private Integer diszn;
+    private Integer disxn;
 
     public String getTransfer() {
         return transfer;
@@ -17,64 +17,64 @@ public class Transfer {
         this.transfer = transfer;
     }
 
-    public Integer getDis_hd() {
-        return dis_hd;
+    public Integer getDishd() {
+        return dishd;
     }
 
-    public void setDis_hd(Integer dis_hd) {
-        this.dis_hd = dis_hd;
+    public void setDishd(Integer dishd) {
+        this.dishd = dishd;
     }
 
-    public Integer getDis_db() {
-        return dis_db;
+    public Integer getDisdb() {
+        return disdb;
     }
 
-    public void setDis_db(Integer dis_db) {
-        this.dis_db = dis_db;
+    public void setDisdb(Integer disdb) {
+        this.disdb = disdb;
     }
 
-    public Integer getDis_xb() {
-        return dis_xb;
+    public Integer getDisxb() {
+        return disxb;
     }
 
-    public void setDis_xb(Integer dis_xb) {
-        this.dis_xb = dis_xb;
+    public void setDisxb(Integer disxb) {
+        this.disxb = disxb;
     }
 
-    public Integer getDis_hb() {
-        return dis_hb;
+    public Integer getDishb() {
+        return dishb;
     }
 
-    public void setDis_hb(Integer dis_hb) {
-        this.dis_hb = dis_hb;
+    public void setDishb(Integer dishb) {
+        this.dishb = dishb;
     }
 
-    public Integer getDis_zn() {
-        return dis_zn;
+    public Integer getDiszn() {
+        return diszn;
     }
 
-    public void setDis_zn(Integer dis_zn) {
-        this.dis_zn = dis_zn;
+    public void setDiszn(Integer diszn) {
+        this.diszn = diszn;
     }
 
-    public Integer getDis_xn() {
-        return dis_xn;
+    public Integer getDisxn() {
+        return disxn;
     }
 
-    public void setDis_xn(Integer dis_xn) {
-        this.dis_xn = dis_xn;
+    public void setDisxn(Integer disxn) {
+        this.disxn = disxn;
     }
 
     @Override
     public String toString() {
         return "Transfer{" +
                 "transfer='" + transfer + '\'' +
-                ", dis_hd=" + dis_hd +
-                ", dis_db=" + dis_db +
-                ", dis_xb=" + dis_xb +
-                ", dis_hb=" + dis_hb +
-                ", dis_zn=" + dis_zn +
-                ", dis_xn=" + dis_xn +
+                ", dishd=" + dishd +
+                ", disdb=" + disdb +
+                ", disxb=" + disxb +
+                ", dishb=" + dishb +
+                ", diszn=" + diszn +
+                ", disxn=" + disxn +
                 '}';
     }
 }

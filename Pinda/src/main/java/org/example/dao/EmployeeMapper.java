@@ -13,9 +13,9 @@ import java.util.List;
 public interface EmployeeMapper {
 
      List<Employee> findall();
-     Employee findbyid(String employee_id);
+     Employee findbyid(String employeeid);
      void insert(Employee employee);
-     void delete(String employee_id);
+     void delete(String employeeid);
      void update(Employee employee);
      List<Employee> findEmployeeByphonenumberandoccupation(
             @Param("phonenumber") String phonenumber,

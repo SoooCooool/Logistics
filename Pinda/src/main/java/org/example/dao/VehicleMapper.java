@@ -22,7 +22,7 @@ public interface VehicleMapper {
      * @param vehicle_id
      * @return
      */
-    public Vehicle getVehiclebyId(String vehicle_id);
+    public Vehicle getVehiclebyId(String vehicleid);
     /**
      * 功能：添加车辆信息
      * @param vehicle ：车辆对象
@@ -38,8 +38,8 @@ public interface VehicleMapper {
     public Integer updateVehicle(Vehicle vehicle);
     /**
      * 功能：根据车辆号删除车辆信息
-     * @param vehicle_id ：要删除的车辆号
+     * @param vehicleid ：要删除的车辆号
      * @return
      */
-    public Integer deleteVehicle(String vehicle_id);
+    public Integer deleteVehicle(String vehicleid);
 }

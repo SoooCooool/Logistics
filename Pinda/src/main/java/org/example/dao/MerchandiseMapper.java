@@ -11,11 +11,11 @@ import java.util.List;
 
 public interface MerchandiseMapper {
     public List<Merchandise> findall();
-    public Merchandise findbyid(String order_id);
+    public Merchandise findbyid(String orderid);
     public void insert(Merchandise merchandise);
-    public void delete(String order_id);
+    public void delete(String orderid);
     public void update(Merchandise merchandise);
     public List<Merchandise> findMerchandisebykindandstate(
             @Param("kind") String kind,
-            @Param("present_state") String present_state);
+            @Param("present_state") String presentstate);
 }
