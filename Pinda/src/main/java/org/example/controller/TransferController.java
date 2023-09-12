@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
-@RequestMapping(value="/Transfer")
+@RequestMapping(value="/api/transfer")
 public class TransferController {
     @Autowired(required=false)
     TransferService transferService;

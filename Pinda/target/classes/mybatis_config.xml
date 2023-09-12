@@ -16,7 +16,7 @@
                 -->
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
                 <!--数据库连接字符串-->
-                <property name="url" value="jdbc:mysql://localhost:3306/logistics?useSSL=false"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/logistics"/>
                 <!--用户名-->
                 <property name="username" value="root"/>
                 <property name="password" value="123456"/>

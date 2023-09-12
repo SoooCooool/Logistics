@@ -29,7 +29,6 @@
         <mapper resource="org/example/dao/OrdersMapper.xml"/>
         <mapper resource="org/example/dao/AdministratorMapper.xml"/>
         <mapper resource="org/example/dao/EmployeeMapper.xml"/>
-        <mapper resource="org/example/dao/MerchandiseMapper.xml"/>
         <mapper resource="org/example/dao/VehicleMapper.xml"/>
         <mapper resource="org/example/dao/UserMapper.xml"/>
         <mapper resource="org/example/dao/TransferMapper.xml"/>

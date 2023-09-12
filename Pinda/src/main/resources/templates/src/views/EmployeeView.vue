@@ -11,13 +11,13 @@
       <el-button style="margin-left: 10px" type="primary">查找</el-button>
     </div>
     <!--表格-->
-    <el-table v-loading="data.isLoading" :data="data.userList" stripe style="width: 100%">
-      <el-table-column prop="userid" width="200" label="用户id" align="center"/>
-      <el-table-column prop="name" width="200" label="用户名" align="center"/>
+    <el-table v-loading="data.isLoading" :data="data.employeeList" stripe style="width: 100%">
+      <el-table-column prop="employeeid" width="200" label="员工id" align="center"/>
+      <el-table-column prop="name" width="200" label="姓名" align="center"/>
+      <el-table-column prop="phonenumber" width="200" label="手机号" align="center"/>
       <el-table-column prop="createdtime" width="200" label="创建时间" align="center"/>
       <el-table-column prop="modifiedtime" width="200" label="修改时间" align="center"/>
-      <el-table-column prop="phonenumber" label="电话号" width="250" align="center"/>
-      <el-table-column prop="location" label="地址" width="250" align="center"/>
+      <el-table-column prop="occupation" width="200" label="职业" align="center"/>
       <el-table-column fixed="right" label="操作" width="300" >
         <template #default="scope">
           <el-button @click="data.userupdateFormVisible = true;" style="margin-right: 16px" type="warning">
@@ -28,23 +28,23 @@
     </el-table>
   </div>
 
-<!--  <el-dialog v-model="data.userupdateFormVisible" title="编辑" width="25%">-->
-<!--    <el-form :model="user" label-width="120px">-->
-<!--      <el-form-item label="更改用户名">-->
-<!--        <el-input v-model="data.name"/>-->
-<!--      </el-form-item>-->
-<!--      <el-form-item label="更改地址">-->
-<!--        <el-input v-model="data.location"/>-->
-<!--      </el-form-item>-->
-<!--      <el-form-item>-->
-<!--        <el-button @click="data.userupdateFormVisible = false">关闭</el-button>-->
-<!--        <el-button type="primary"-->
-<!--                   @click="data.userupdateFormVisible = false;uploaduser(oneGoods.goodsId,oneGoods.url);data.newImageUrl=null;hasBeenUpdated">-->
-<!--          确认提交并更改-->
-<!--        </el-button>-->
-<!--      </el-form-item>-->
-<!--    </el-form>-->
-<!--  </el-dialog>-->
+  <!--  <el-dialog v-model="data.userupdateFormVisible" title="编辑" width="25%">-->
+  <!--    <el-form :model="user" label-width="120px">-->
+  <!--      <el-form-item label="更改用户名">-->
+  <!--        <el-input v-model="data.name"/>-->
+  <!--      </el-form-item>-->
+  <!--      <el-form-item label="更改地址">-->
+  <!--        <el-input v-model="data.location"/>-->
+  <!--      </el-form-item>-->
+  <!--      <el-form-item>-->
+  <!--        <el-button @click="data.userupdateFormVisible = false">关闭</el-button>-->
+  <!--        <el-button type="primary"-->
+  <!--                   @click="data.userupdateFormVisible = false;uploaduser(oneGoods.goodsId,oneGoods.url);data.newImageUrl=null;hasBeenUpdated">-->
+  <!--          确认提交并更改-->
+  <!--        </el-button>-->
+  <!--      </el-form-item>-->
+  <!--    </el-form>-->
+  <!--  </el-dialog>-->
 </template>
 
 <script>
@@ -54,31 +54,31 @@
 import {inject, onMounted, reactive} from "vue";
 
 export default {
-  name: 'UserView',
+  name: 'EmployeeView',
   components: {},
   setup() {
     onMounted(() => {
-      getUserList();
+      getEmployeeList();
     })
 
     const axios = inject('axios');
     const data = reactive({
       //userupdateFormVisible: false,
       search: '',
-      userList: [],
+      employeeList: [],
       isLoading:true
     });
 
-    const getUserList = function () {
+    const getEmployeeList = function () {
       const config = {
         method: 'get',
-        url: 'api/user/queryAll',
+        url: 'api/employee/queryAll',
         headers: {}
       };
 
       axios(config)
           .then(function (response) {
-            data.userList=response.data.data;
+            data.employeeList=response.data.data;
             data.isLoading = false;
           })
           .catch(function (error) {
@@ -96,7 +96,7 @@ export default {
 
     return {
       data,
-      getUserList,
+      getEmployeeList,
       formatDate
     }
 

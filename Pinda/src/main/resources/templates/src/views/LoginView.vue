@@ -60,9 +60,9 @@ export default {
                    console.error('Error:', error);
                  });
       },
-    },
   },
 };
+
 
 
 
