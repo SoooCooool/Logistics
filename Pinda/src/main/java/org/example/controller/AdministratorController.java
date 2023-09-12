@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.apache.ibatis.annotations.Param;
 import org.example.common.Result;
 import org.example.pojo.Administrator;
 import org.example.service.AdministratorService;
@@ -28,39 +29,40 @@ public class AdministratorController {
 
     @GetMapping(value = "/getbyId")
     @ResponseBody
-    public Result getbyId(){
-        Administrator administrator = administratorService.queryAdministratorById("M123456");
+    public Result getbyId(@Param("id") String id){
+        Administrator administrator = administratorService.queryAdministratorById(id);
         return Result.success(administrator);
     }
 
     @GetMapping(value = "/deleteById")
     @ResponseBody
-    public String deleteById(){
-        administratorService.deleteAdministratorById("M123456");
+    public String deleteById(@Param("id") String id){
+        administratorService.deleteAdministratorById(id);
         return "删除成功";
     }
 
     @GetMapping(value = "/add")
     @ResponseBody
-    public String add(){
-        Administrator administrator = null;
-        administratorService.addAdministrator(administrator);
-        return "删除成功";
+    public String add(@Param("admin") Administrator admin){
+        administratorService.addAdministrator(admin);
+        return "添加成功";
     }
 
     @GetMapping(value = "/updateById")
     @ResponseBody
-    public String updateById(){
-        Administrator administrator = null;
-        String id = null;
-        administratorService.updateAdministratorById(administrator,id);
+    public String updateById(@Param("id") String id,
+                             @Param("admin") Administrator admin){
+        administratorService.updateAdministratorById(admin,id);
         return "删除成功";
     }
     @GetMapping(value = "/queryByNameAndPermissions")
     @ResponseBody
-    public Result queryByNameAndPermissions(){
+    public Result queryByNameAndPermissions(@Param("name") String name,
+                                            @Param("permissions") Integer permissions){
         Administrator admin=null;
-        List<Administrator> administrator = administratorService.findAdministratorByNameAndPermissions(admin);
+        admin.setName(name);
+        admin.setPermissions(permissions);
+        List<Administrator> administrator = administratorService.findAdministratorByNameAndPermissions(admin.getName(),admin.getPermissions());
         return Result.success(administrator);
     }
 }

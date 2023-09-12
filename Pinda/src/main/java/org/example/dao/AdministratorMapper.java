@@ -56,4 +56,10 @@ public interface AdministratorMapper {
     public List<Administrator> findAdministratorByNameAndPermissions(
             @Param("name") String name,
             @Param("permissions") Integer permissions);
+
+    void updateAdministratorById(Administrator administrator, String id);
+
+    void deleteAdministratorById(String id);
+
+    List<Administrator> findAdministratorBy(Administrator administrator);
 }

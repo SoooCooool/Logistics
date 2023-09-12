@@ -19,12 +19,14 @@
     </update>
 
     <delete id="DeleteuserById">
-        delete from user
+        update user
+        set  deleted=1
         where userid=#{userid}
     </delete>
 
     <select id="DeleteuserByIds" resultType="org.example.pojo.User">
-        delete from user
+        update user
+        set  deleted=1
         where userid in
         <foreach collection="list" open="(" close=")" separator="," item="userid">
             #{userid}

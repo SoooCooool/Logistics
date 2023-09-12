@@ -20,7 +20,7 @@ public class EmployeeController {
 
     private EmployeeController employeeController;
 
-    @GetMapping(value = "/queryAll")
+    @PostMapping(value = "/queryAll")
     @ResponseBody
     public Result findall(){
         List<Employee> employees = employeeService.findall();

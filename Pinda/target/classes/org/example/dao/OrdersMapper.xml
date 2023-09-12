@@ -23,11 +23,13 @@
     </update>
 
     <delete id="DeleteordersById">
-        delete from orders
+        update orders
+        set  deleted=1
         where orderid = #{orderid}
     </delete>
     <delete id="DeleteordersByIds">
-        delete from orders
+        update orders
+        set  deleted=1
         where orderid in
         <foreach collection="list" open="(" close=")" separator="," item="orderid">
             #{orderid}

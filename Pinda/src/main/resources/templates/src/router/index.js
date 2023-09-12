@@ -3,17 +3,30 @@ import UserView from '../views/UserView.vue'
 import OrderView from '../views/OrderView.vue'
 import EmployeeView from '../views/EmployeeView.vue'
 import AdministratorView from '../views/AdministratorView.vue'
+import UsersetView from "@/views/UsersetView.vue"
 // import TransferView from '../views/TransferView.vue'
 import VehicleView from '../views/VehicleView.vue'
-import DataView from "@/views/DataView";
-import GoodsView from "@/views/GoodsView";
+import DataView from "@/views/DataView"
+import GoodsView from "@/views/GoodsView"
 import UploadImage from "@/components/Upload/UploadImage";
-import addGoodsView from "@/views/AddGoodsView.vue";
-import MapView from "@/views/MapView";
-import LoginView from "@/views/LoginView";
-import SettingView from "@/views/SettingView";
+import addGoodsView from "@/views/AddGoodsView.vue"
+import MapView from "@/views/MapView"
+import LoginView from "@/views/LoginView"
+import SettingView from "@/views/SettingView"
+import TestView from "@/views/TestView"
+import LogonView from "@/views/LogonView.vue";
 
 const routes = [
+  {
+    path: '/userset',
+    name: 'UsersetView',
+    component: UsersetView
+  },
+  {
+    path: '/logon',
+    name: 'LogonView',
+    component: LogonView
+  },
   {
     path: '/',
     name: 'LoginView',
