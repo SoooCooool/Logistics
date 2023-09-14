@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 
 import org.example.pojo.Orders;
 import org.example.pojo.User;
+import org.example.pojo.Vehicle;
 import org.springframework.stereotype.Repository;
 
 
@@ -28,4 +29,6 @@ public interface UserMapper {
     void DeleteuserByIds(@Param("user_ids") String userids);
 
     void Updateuser(User user);
+    public List<User> searchUser(String search);
+    public int accountUser();
 }

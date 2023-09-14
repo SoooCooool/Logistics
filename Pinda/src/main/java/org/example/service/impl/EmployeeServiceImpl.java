@@ -2,6 +2,7 @@ package org.example.service.impl;
 
 import org.example.dao.EmployeeMapper;
 import org.example.pojo.Employee;
+import org.example.pojo.Vehicle;
 import org.example.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,4 +31,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void updateemployeebyid(Employee employee) {
         employeeMapper.update(employee);
     }
+    @Override
+    public List<Employee> searchEmployee(String search){return employeeMapper.searchEmployee(search);}
+    @Override
+    public int accountEmployee(){return employeeMapper.accountEmployee();}
 }

@@ -17,6 +17,7 @@
 import * as echarts from 'echarts';
 import axios from 'axios';
 import 'echarts/extension/bmap/bmap';
+import {inject, onMounted, reactive} from "vue";
 
 export default {
   name: 'DataView',

@@ -17,13 +17,13 @@
         delete from employee where employeeid = #{employeeid}
     </delete>
     <update id="update">
-        update employee set createdtime = #{createdtime},modifiedtime = #{modifiedtime},name = #{name},phonenumber = #{phonenumber},occupation = #{occupation},permissions = #{permissions},deleted = #{deleted} where employeeid = #{employeeid}
+        update employee set createdtime = #{createdtime},modifiedtime = #{modifiedtime},name = #{name},phonenumber = #{phonenumber},occupation = #{occupation},permissions = #{permissions},deleted = #{deleted},password = #{password} where employeeid = #{employeeid}
     </update>
     <select id="findbyid" resultType="org.example.pojo.Employee">
-        select * from employee where employeeid = #{employeeid}
+        select * from employee where employeeid = #{employeeid} and deleted = 0
     </select>
     <select id="findall" resultType="org.example.pojo.Employee">
-        select * from employee
+        select * from employee where deleted = 0
     </select>
     <select id="findEmployeeByphonenumberandoccupation" resultType="org.example.pojo.Employee">
         select * from employee
@@ -52,5 +52,26 @@
                 and amount like concat('%',#{amount},'%')
             </if>
         </where>
+    </select>
+    <select id="searchEmployee"  resultType="org.example.pojo.Employee">
+        select * from employee
+        where concat(employeeid,name,phonenumber,occupation) like concat('%',#{search},'%')
+
+        <!--        <where>-->
+        <!--            &lt;!&ndash;??if????????????sql&ndash;&gt;-->
+        <!--            <if test="vehicleid != null and userid != '' ">-->
+        <!--                or vehicleid like concat('%',#{search},'%')-->
+        <!--            </if>-->
+        <!--            <if test="name != null and name != '' ">-->
+        <!--                or transferbelong like concat('%',#{search},'%')-->
+        <!--            </if>-->
+        <!--            <if test="createdtime != null and createdtime != '' ">-->
+        <!--                or driverid like concat('%',#{search},'%')-->
+        <!--            </if>-->
+        <!--        </where>-->
+    </select>
+
+    <select id="accountEmployee" resultType="int">
+        select count(*) from employee where deleted=0
     </select>
 </mapper>

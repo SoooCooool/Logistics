@@ -20,4 +20,7 @@ public interface EmployeeMapper {
      List<Employee> findEmployeeByphonenumberandoccupation(
             @Param("phonenumber") String phonenumber,
             @Param("occupation") String occupation);
+
+    List<Employee> searchEmployee(String search);
+     public int accountEmployee();
 }

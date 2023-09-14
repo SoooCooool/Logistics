@@ -2,13 +2,12 @@
   <div>
     <!--    增加按钮和搜索框-->
     <div style="margin: 10px 5px">
-      <el-button type="primary">新增</el-button>
-      <el-button>其他</el-button>
     </div>
 
     <div style="margin: 10px 5px">
-      <el-input v-model="data.search" style="width: 30%;" placeholder="请输入关键字"/>
-      <el-button style="margin-left: 10px" type="primary">查找</el-button>
+      <el-input v-model="data.search" style="width: 30%;" placeholder="请输入关键字" @keyup.enter.native="querysome()" clearable/>
+      <el-button style="margin-left: 10px" type="primary" @click="querysome()">查找</el-button>
+      <el-button style="margin-left: 10px" type="primary" @click="clear()">清除</el-button>
     </div>
     <!--表格-->
     <el-table v-loading="data.isLoading" :data="data.ordersList" stripe style="width: 100%">
@@ -27,33 +26,10 @@
       <el-table-column prop="presentlocation" label="当前地址" width="100" align="center"/>
       <el-table-column prop="presentstate" label="当前状态" width="100" align="center"/>
       <el-table-column prop="weight" label="物品重量" width="50" align="center"/>
-      <el-table-column fixed="right" label="操作" width="250" >
-        <template #default="scope">
-          <el-button @click="data.userupdateFormVisible = true;" style="margin-right: 16px" type="warning">
-            <el-icon><Edit /></el-icon>编辑</el-button>
-          <el-button link type="primary" size="small" @click="editDialogEdit(scope.row)">删除</el-button>
-        </template>
-      </el-table-column>
     </el-table>
   </div>
 
-  <!--  <el-dialog v-model="data.userupdateFormVisible" title="编辑" width="25%">-->
-  <!--    <el-form :model="user" label-width="120px">-->
-  <!--      <el-form-item label="更改用户名">-->
-  <!--        <el-input v-model="data.name"/>-->
-  <!--      </el-form-item>-->
-  <!--      <el-form-item label="更改地址">-->
-  <!--        <el-input v-model="data.location"/>-->
-  <!--      </el-form-item>-->
-  <!--      <el-form-item>-->
-  <!--        <el-button @click="data.userupdateFormVisible = false">关闭</el-button>-->
-  <!--        <el-button type="primary"-->
-  <!--                   @click="data.userupdateFormVisible = false;uploaduser(oneGoods.goodsId,oneGoods.url);data.newImageUrl=null;hasBeenUpdated">-->
-  <!--          确认提交并更改-->
-  <!--        </el-button>-->
-  <!--      </el-form-item>-->
-  <!--    </el-form>-->
-  <!--  </el-dialog>-->
+
 </template>
 
 <script>
@@ -61,35 +37,39 @@
 
 
 import {inject, onMounted, reactive} from "vue";
+import axios from "axios";
+import store from "@/store";
 
 export default {
   name: 'OrderView',
   components: {},
   setup() {
     onMounted(() => {
-      getOrderList();
+      getOrdersList();
     })
 
     const axios = inject('axios');
     const data = reactive({
-      //userupdateFormVisible: false,
+      ordersaddFormVisible: false,
       search: '',
-      orderList: [],
+      ordersList: [],
+      orderid: '',
+      userid: '',
+      employeeid: '',
+      startlocation: '',
+      destination: '',
+      amount: '',
+      kind: '',
+      weight: '',
       isLoading:true
     });
 
-    const getOrderList = function () {
-      const config = {
-        method: 'get',
-        url: 'api/orders/queryAll',
-        headers: {}
-      };
+    const getOrdersList = function () {
 
-      axios(config)
-          .then(function (response) {
-            data.orderList=response.data.data;
-            data.isLoading = false;
-          })
+      axios.get('api/orders/queryuserAll?userid=' + store.state.userid).then(function (response) {
+        data.ordersList = response.data.data;
+        data.isLoading = false;
+      })
           .catch(function (error) {
             console.log(error);
           });
@@ -105,10 +85,34 @@ export default {
 
     return {
       data,
-      getOrderList,
+      getOrdersList,
       formatDate
     }
 
+  },
+
+  methods: {
+    clear() {
+      this.data.search = null;
+      this.getOrdersList()
+    },
+
+    querysome() {
+      const _this = this
+      const js = JSON.stringify({
+        "userid": store.state.userid,
+        "search": _this.data.search,
+      });
+      console.log(js);
+      axios.post('/api/orders/searchuserOrders', js,
+          {headers: {'Content-Type': 'application/json'}}).then(function (response) {
+        _this.data.ordersList = response.data.data;
+        _this.data.isLoading = false;
+      })
+          .catch(function (error) {
+            console.log(error);
+          });
+    }
   }
 }
 

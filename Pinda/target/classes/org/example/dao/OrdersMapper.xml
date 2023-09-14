@@ -10,15 +10,15 @@
         insert into orders (orderid,userid,employeeid,modifiedpersonid,createdtime,modifiedtime,
                             kind,weight,arrivetransfertime,starttime,finaltime,presentlocation,presentstate,startlocation,destination,deleted,amount)
         values (#{orderid},#{userid},#{employeeid},#{modifiedpersonid},#{createdtime},#{modifiedtime},
-                #{orderid},#{kind},#{weight},#{arrivetransfertime},#{starttime},#{finaltime},#{presentlocation},#{presentstate},#{startlocation},#{destination},#{deleted},#{amount})
+            #{kind},#{weight},#{arrivetransfertime},#{starttime},#{finaltime},#{presentlocation},#{presentstate},#{startlocation},#{destination},#{deleted},#{amount})
     </insert>
 
     <update id="Updateorders">
         update orders
         set userid=#{userid},employeeid=#{employeeid},modifiedpersonid=#{modifiedpersonid},createdtime=#{createdtime},modifiedtime=#{modifiedtime},
-            state=#{state},startlocation=#{startlocation},destination=#{destination},deleted=#{deleted},amount=#{amount},kind = #{kind},
+            startlocation=#{startlocation},destination=#{destination},deleted=#{deleted},amount=#{amount},kind = #{kind},
             weight = #{weight},arrivetransfertime = #{arrivetransfertime},starttime = #{starttime},finaltime = #{finaltime},
-            presentlocation = #{present_location},presentstate = #{presentstate}
+            presentlocation = #{presentlocation},presentstate = #{presentstate}
         where orderid = #{orderid}
     </update>
 
@@ -37,10 +37,26 @@
     </delete>
 
     <select id="QueryordersById" resultType="org.example.pojo.Orders">
-        select * from orders where orderid = #{orderid}
+        select * from orders where orderid = #{orderid} and deleted!=1
     </select>
     <select id="QueryordersAll" resultType="org.example.pojo.Orders">
+        select * from orders where deleted!=1
+    </select>
+    <select id="QueryuserordersAll" resultType="org.example.pojo.Orders">
+        select * from orders where userid = #{userid} and deleted!=1
+    </select>
+
+
+    <select id="searchOrders" resultType="org.example.pojo.Orders">
         select * from orders
+        where concat(orderid,userid,employeeid,modifiedpersonid,finaltime,presentstate
+            ,createdtime,startlocation,destination,amount,kind,arrivetransfertime,starttime) like concat('%',#{search},'%') and deleted!=1
+    </select>
+    <select id="searchuserOrders" resultType="org.example.pojo.Orders">
+        select * from orders
+        where concat(orderid,employeeid,modifiedpersonid,finaltime,presentstate
+                  ,createdtime,startlocation,destination,amount,kind,arrivetransfertime,starttime) like concat('%',#{search},'%')
+                and deleted!=1 and userid = #{userid}
     </select>
 
     <select id="Queryorders" resultType="org.example.pojo.Orders" parameterType="map">
@@ -55,9 +71,6 @@
             </if>
             <if test="employeeid != null and employeeid != '' ">
                 and employeeid like concat('%',#{employeeid},'%')
-            </if>
-            <if test="state != null and state != '' ">
-                and state like concat('%',#{state},'%')
             </if>
             <if test="startlocation != null and startlocation != '' ">
                 and startlocation like concat('%',#{startlocation},'%')

@@ -30,7 +30,7 @@ public class AdministratorController {
     @GetMapping(value = "/getbyId")
     @ResponseBody
     public Result getbyId(@Param("id") String id){
-        Administrator administrator = administratorService.queryAdministratorById(id);
+        Administrator administrator = administratorService.getAdministratorbyId(id);
         return Result.success(administrator);
     }
 

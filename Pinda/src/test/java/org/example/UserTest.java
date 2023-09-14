@@ -32,7 +32,7 @@ public class UserTest {
 
         SqlSession sqlSession = SqlSessionUtil.getSqlSession();
         User user=new User();
-        user.setUserid("U000000");
+        user.setUserid("U000001");
         user.setName("hhh");
         user.setPhonenumber(1213234545);
         user.setLocation("wuhan");

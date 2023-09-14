@@ -1,6 +1,7 @@
 package org.example.service;
 
 import org.example.pojo.User;
+import org.example.pojo.Vehicle;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,4 +19,6 @@ public interface UserService {
     public void addUser(User user);
 
     public void updateUser(User user);
+    public List<User> searchUser(String search);
+    public int accountUser();
 }

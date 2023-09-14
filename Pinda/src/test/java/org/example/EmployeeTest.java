@@ -73,7 +73,7 @@ public class EmployeeTest {
             employee.setDeleted(0);
             employee.setOccupation("派送员");
             employee.setPermissions(2);
-            employee.setPhonenumber(1234567891);
+            employee.setPhonenumber("1234567891");
             Date o = new Date(153,9,11);
             employee.setModifiedtime(o);
             employeeMapper.insert(employee);
@@ -103,7 +103,7 @@ public class EmployeeTest {
             employee.setDeleted(1);
             employee.setOccupation("派送员1");
             employee.setPermissions(2);
-            employee.setPhonenumber(1234567890);
+            employee.setPhonenumber("1234567890");
             Date o = new Date(154,10,12);
             employee.setModifiedtime(o);
             employeeMapper.update(employee);

@@ -14,6 +14,8 @@
     <el-table v-loading="data.isLoading" :data="data.administratorList" stripe style="width: 100%">
       <el-table-column prop="administratorid" width="200" label="管理员id" align="center"/>
       <el-table-column prop="name" width="200" label="姓名" align="center"/>
+
+
       <el-table-column prop="createdtime" width="200" label="创建时间" align="center"/>
       <el-table-column prop="modifiedtime" width="200" label="修改时间" align="center"/>
       <el-table-column fixed="right" label="操作" width="300" >
@@ -54,6 +56,21 @@ import {inject, onMounted, reactive} from "vue";
 export default {
   name: 'AdministratorView',
   components: {},
+  data() {
+    return {
+      data: {
+        adminupdateFormVisible: false,
+        adminaddFormVisible: false,
+        name: '',
+        password: '',
+        // ...其他数据...
+      },
+      Administrator: {
+        name: '',
+        password: '',
+      },
+    };
+  },
   setup() {
     onMounted(() => {
       getAdministratorList();

@@ -4,24 +4,19 @@ import OrderView from '../views/OrderView.vue'
 import EmployeeView from '../views/EmployeeView.vue'
 import AdministratorView from '../views/AdministratorView.vue'
 import UsersetView from "@/views/UsersetView.vue"
-// import TransferView from '../views/TransferView.vue'
+import UserorderView from "@/views/UserorderView.vue"
+import EmployeesetView from '../views/EmployeesetView.vue'
+import AdminsetView from '../views/AdminsetView.vue'
+import TransferView from "@/views/TransferView.vue"
 import VehicleView from '../views/VehicleView.vue'
 import DataView from "@/views/DataView"
-import GoodsView from "@/views/GoodsView"
-import UploadImage from "@/components/Upload/UploadImage";
-import addGoodsView from "@/views/AddGoodsView.vue"
-import MapView from "@/views/MapView"
-import LoginView from "@/views/LoginView"
-import SettingView from "@/views/SettingView"
-import TestView from "@/views/TestView"
+import LoginView from "@/views/LoginView.vue"
 import LogonView from "@/views/LogonView.vue";
 
+import {vShow} from "vue";
+import store from "@/store";
+
 const routes = [
-  {
-    path: '/userset',
-    name: 'UsersetView',
-    component: UsersetView
-  },
   {
     path: '/logon',
     name: 'LogonView',
@@ -30,7 +25,7 @@ const routes = [
   {
     path: '/',
     name: 'LoginView',
-    component: LoginView
+    component: LoginView,
   },
   {
     path: '/user',
@@ -40,23 +35,24 @@ const routes = [
   {
     path: '/orders',
     name: 'OrderView',
-    component: OrderView
+    component: OrderView,
+
   },
   {
     path: '/employee',
     name: 'EmployeeView',
-    component: EmployeeView
+    component: EmployeeView,
   },
   {
     path: '/administrator',
     name: 'AdministratorView',
     component: AdministratorView
   },
-  // {
-  //   path: '/transfer',
-  //   name: 'TransferView',
-  //   component: TransferView
-  // },
+  {
+    path: '/transfer',
+    name: 'TransferView',
+    component: TransferView
+  },
   {
     path: '/vehicle',
     name: 'VehicleView',
@@ -78,24 +74,17 @@ const routes = [
     component: GoodsView
   },
   {
-    path: '/setting',
-    name:'settingView',
-    component: SettingView
+    path: '/userset',
+    name: 'usersetView',
+    component: UsersetView
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  },
-  {
-    path: '/addGoodsView',
-    name: 'addGoodsView',
-    component: addGoodsView
+    path: '/employeeset',
+    name: 'employeesetView',
+    component: EmployeesetView
   },
 ]
+
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

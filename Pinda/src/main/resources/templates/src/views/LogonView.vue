@@ -1,82 +1,146 @@
-<template>
-  <div class="register-form">
-    <h2>注册</h2>
-    <form @submit.prevent="register">
+<!--<template>
+  <div class="register">
+    <h2>用户注册</h2>
+    <form @submit.prevent="submitForm">
       <div class="form-group">
-        <label for="username">用户名：</label>
-        <input type="text" id="username" v-model="username" required />
-      </div>
-      <div class="form-group">
-        <label for="password">密码：</label>
-        <input type="password" id="password" v-model="password" required />
+        <label for="username">姓名：</label>
+        <input type="text" id="name" v-model="userInfo.name" />
       </div>
       <div class="form-group">
         <label for="location">位置：</label>
-        <input type="text" id="location" v-model="location" required />
+        <input type="text" id="location" v-model="userInfo.location" />
       </div>
       <div class="form-group">
-        <label for="phone">手机号码：</label>
-        <input type="number" id="phone" v-model="phone" required />
+        <label for="password">密码：</label>
+        <input  type="password" id="password" v-model="userInfo.password" />
       </div>
-      <div class="form-actions">
-        <button type="submit">注册</button>
+      <div class="form-group">
+        <label for="phonenumber">手机号：</label>
+        <input type="text" maxlength="11" minlength="11" slot="请输入" id="phonenumber" v-model="userInfo.phonenumber" />
       </div>
+      <button type="submit" >注册并登录</button>
     </form>
+
+    &lt;!&ndash; 注册成功弹窗 &ndash;&gt;
+    <div v-if="successDialogVisible" class="success-dialog">
+      <h2>注册成功</h2>
+      <p>用户账号：{{ registeredUsername }}</p>
+    </div>
+  </div>
+</template>-->
+<template>
+  <div class="register">
+    <h2>用户注册</h2>
+    <form @submit.prevent="submitForm">
+      <div class="form-group">
+        <label for="username">姓名：</label>
+        <input type="text" id="name" v-model="userInfo.name" />
+      </div>
+      <div class="form-group">
+        <label for="location">位置：</label>
+        <input type="text" id="location" v-model="userInfo.location" />
+      </div>
+      <div class="form-group">
+        <label for="password">密码：</label>
+        <input  type="password" id="password" v-model="userInfo.password" />
+      </div>
+      <div class="form-group">
+        <label for="phonenumber">手机号：</label>
+        <input type="text" maxlength="11" minlength="11" id="phonenumber" v-model="userInfo.phonenumber" />
+      </div>
+      <button type="submit">注册并登录</button>
+    </form>
+
+    <!-- 注册成功弹窗 -->
+    <div v-if="successDialogVisible" class="success-dialog">
+      <h2>注册成功</h2>
+      <p>用户账号：{{ registeredUsername }}</p>
+    </div>
   </div>
 </template>
-
 <script>
 import axios from "axios";
+import store from "@/store";
 
 export default {
+  /*data() {
+    return {
+      userInfo: {
+        name: '',
+        location: '',
+        password: '',
+        phonenumber: '',
+        userid:""
+      },
+      successDialogVisible: false, // 注册成功弹窗可见性
+      registeredUsername: '', // 从后端接收到的用户账号
+    };
+  },*/
   data() {
     return {
-      username: '',
-      password: '',
-      location: '', // 更改为位置
-      phone: '',
+      userInfo: {
+        name: '',
+        location: '',
+        password: '',
+        phonenumber: '',
+      },
+      successDialogVisible: false,
+      registeredUsername: '',
     };
   },
   methods: {
-    register() {
-      // 构造要发送给后端的注册数据
-      const registrationData = {
-        username: this.username,
-        password: this.password,
-        location: this.location, // 更改为位置
-        phone: this.phone,
-      };
-
-      // 使用axios或其他HTTP库发送POST请求将数据发送给后端
-      // 请将'/api/register'替换为实际的后端注册接口URL
-      axios.post('/api/register', registrationData)
+    submitForm() {
+      // 在提交表单之前进行输入字段的验证
+      if (this.userInfo.name.trim() === '' || this.userInfo.location.trim() === '' || this.userInfo.password.trim() === '' || this.userInfo.phonenumber.trim() === '') {
+        // 如果有任何一个字段为空，显示错误消息或者采取其他适当的操作
+        alert('请输入完整的信息');
+        return;
+      }
+      axios.post('/api/log/register', this.userInfo)
           .then(response => {
-            // 处理后端响应，例如显示成功消息或导航到登录页面
-            console.log('注册成功：', response.data);
+            // 注册成功后，显示弹窗并接收后端返回的用户账号
+            //this.registeredUsername = response.data.uid;
+            //this.successDialogVisible = true;
+            console.log('store:', store.state.userid);
+            this.$store.commit('login', response.data.data);
+            this.$message.success('注册成功！')
+            this.$router.push('/userset');
+
+
           })
           .catch(error => {
-            // 处理错误，例如显示错误消息或重置表单
-            console.error('注册失败：', error);
+            console.error('Error registering user:', error);
           });
+
+      // 如果输入字段都不为空，可以提交表单
+      // 向后端发送注册请求并处理成功响应
+      // ...
+
     },
   },
+
 };
 </script>
 
 <style scoped>
-/* 添加样式以美化注册界面 */
-.register-form {
-  width: 300px;
+/* 添加样式以美化界面 */
+.register {
+  width: 80%;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+}
+
+h2 {
   text-align: center;
 }
 
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 .form-group {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 label {
@@ -92,11 +156,25 @@ input[type="password"] {
   border-radius: 3px;
 }
 
-.form-actions {
-  margin-top: 20px;
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
-button {
-  margin-right: 10px;
+/* 注册成功弹窗样式 */
+.success-dialog {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center;
+  margin-top: 20px;
 }
 </style>

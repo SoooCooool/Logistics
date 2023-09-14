@@ -1,16 +1,17 @@
-package org.example.pojo;
+package org.example.dto;
 
-public class LogonRequest {
-    private Integer phone;
+public class DataWithId {
+    private String phone;
     private String location;
     private String username;
     private String password;
+    private String userid;
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -36,5 +37,13 @@ public class LogonRequest {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 }

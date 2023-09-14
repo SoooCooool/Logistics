@@ -12,6 +12,12 @@ public class Employee {
     private String password;
     private String employeeid;
     private Date createdtime;
+    private Date modifiedtime;
+    private String name;
+    private String phonenumber;
+    private String occupation;
+    private int permissions;
+    private int deleted;
 
     public String getPassword() {
         return password;
@@ -21,16 +27,21 @@ public class Employee {
         this.password = password;
     }
 
-    private Date modifiedtime;
-    private String name;
-    private int phonenumber;
-    private String occupation;
-    private int permissions;
-    private int deleted;
-    public String getEmployeeid() {return employeeid;}
-    public void setEmployeeid(String employeeid){this.employeeid=employeeid;}
-    public Date getCreatedtime(){return createdtime;}
-    public void setCreatedtime(Date createdtime){this.createdtime=createdtime;}
+    public String getEmployeeid() {
+        return employeeid;
+    }
+
+    public void setEmployeeid(String employeeid) {
+        this.employeeid = employeeid;
+    }
+
+    public Date getCreatedtime() {
+        return createdtime;
+    }
+
+    public void setCreatedtime(Date createdtime) {
+        this.createdtime = createdtime;
+    }
 
     public Date getModifiedtime() {
         return modifiedtime;
@@ -48,11 +59,11 @@ public class Employee {
         this.name = name;
     }
 
-    public int getPhonenumber() {
+    public String getPhonenumber() {
         return phonenumber;
     }
 
-    public void setPhonenumber(int phonenumber) {
+    public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
 
@@ -68,8 +79,8 @@ public class Employee {
         return permissions;
     }
 
-    public void setPermissions(int permission) {
-        this.permissions = permission;
+    public void setPermissions(int permissions) {
+        this.permissions = permissions;
     }
 
     public int getDeleted() {
@@ -83,11 +94,12 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" +
-                "employeeid='" + employeeid + '\'' +
+                "password='" + password + '\'' +
+                ", employeeid='" + employeeid + '\'' +
                 ", createdtime=" + createdtime +
                 ", modifiedtime=" + modifiedtime +
                 ", name='" + name + '\'' +
-                ", phonenumber=" + phonenumber +
+                ", phonenumber='" + phonenumber + '\'' +
                 ", occupation='" + occupation + '\'' +
                 ", permissions=" + permissions +
                 ", deleted=" + deleted +

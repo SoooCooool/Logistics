@@ -1,4 +1,4 @@
-package org.example.pojo;
+package org.example.dto;
 
 public class LoginRequest {
     private String username;

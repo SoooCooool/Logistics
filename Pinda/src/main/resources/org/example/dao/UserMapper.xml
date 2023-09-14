@@ -6,6 +6,7 @@
 <mapper namespace="org.example.dao.UserMapper">
 
 
+
     <insert id="Adduser">
         insert into user (userid,name,createdtime,modifiedtime,location,phonenumber,permissions)
         values (#{userid},#{name},#{createdtime},#{modifiedtime},#{location},#{phonenumber},#{permissions})
@@ -15,7 +16,7 @@
         update user
         set name=#{name},createdtime=#{createdtime},modifiedtime=#{modifiedtime},location=#{location},
             phonenumber=#{phonenumber},permissions=#{permissions}
-        where user_id=#{user_id}
+        where userid=#{userid}
     </update>
 
     <delete id="DeleteuserById">
@@ -59,6 +60,25 @@
             </if>
         </where>
     </select>
+    <select id="searchUser" resultType="org.example.pojo.User">
+        select * from user
+        where concat(userid,name,phonenumber,location) like concat('%',#{search},'%')
 
+        <!--        <where>-->
+        <!--            &lt;!&ndash;添加if条件如果参数为空则不拼接sql&ndash;&gt;-->
+        <!--            <if test="vehicleid != null and userid != '' ">-->
+        <!--                or vehicleid like concat('%',#{search},'%')-->
+        <!--            </if>-->
+        <!--            <if test="name != null and name != '' ">-->
+        <!--                or transferbelong like concat('%',#{search},'%')-->
+        <!--            </if>-->
+        <!--            <if test="createdtime != null and createdtime != '' ">-->
+        <!--                or driverid like concat('%',#{search},'%')-->
+        <!--            </if>-->
+        <!--        </where>-->
+    </select>
+    <select id="accountUser" resultType="int">
+        select count(*) from user where deleted=0
+    </select>
 
 </mapper>

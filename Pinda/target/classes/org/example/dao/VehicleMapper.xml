@@ -14,8 +14,6 @@
         <!--表字段的主键
         property:类中的属性名
         column:表中的字段名
-
-
         -->
         <result property="vehicleid" column="vehicleid"></result>
         <result property="transferbelong" column="transferbelong"></result>
@@ -31,19 +29,39 @@
         where vehicleid = #{vehicleid}
     </select>
 
+
     <insert id="addVehicle" parameterType="org.example.pojo.Vehicle">
         insert into vehicle(vehicleid,transferbelong,driverid)
         values (#{vehicleid},#{transferbelong},#{driverid})
     </insert>
 
-    <update id="deleteVehicle">
+    <delete id="deleteVehicle">
         delete from vehicle
         where vehicleid = #{vehicleid}
-    </update>
+    </delete>
 
     <update id="updateVehicle" parameterType="org.example.pojo.Vehicle">
         update vehicle set transferbelong=#{transferbelong},driverid=#{driverid}
         where vehicleid = #{vehicleid}
     </update>
+
+
+    <select id="searchVehicle" resultMap="VehicleResultMap" resultType="org.example.pojo.Vehicle">
+        select * from vehicle
+        where concat(vehicleid,driverid,transferbelong) like concat('%',#{search},'%')
+
+        <!--        <where>-->
+        <!--            &lt;!&ndash;添加if条件如果参数为空则不拼接sql&ndash;&gt;-->
+        <!--            <if test="vehicleid != null and userid != '' ">-->
+        <!--                or vehicleid like concat('%',#{search},'%')-->
+        <!--            </if>-->
+        <!--            <if test="name != null and name != '' ">-->
+        <!--                or transferbelong like concat('%',#{search},'%')-->
+        <!--            </if>-->
+        <!--            <if test="createdtime != null and createdtime != '' ">-->
+        <!--                or driverid like concat('%',#{search},'%')-->
+        <!--            </if>-->
+        <!--        </where>-->
+    </select>
 
 </mapper>

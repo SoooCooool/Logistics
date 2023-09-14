@@ -7,11 +7,13 @@
   <router-view/>-->
   <div>
   <!--头部：Header组件-->
-    <Header/>
+
+    <Header v-show="$route.name!=='LoginView'&&$route.name!=='LogonView'"/>
+
     <!--  主体  -->
     <div style="display: flex">
       <!--   侧边栏   -->
-      <Aside/>
+      <Aside v-show="$route.name!=='LoginView'&&$route.name!=='LogonView'"/>
       <!--   内容区域：路由到HomeView   -->
       <router-view style="flex: 1"/>
 

@@ -19,23 +19,25 @@
         <result property="createdtime" column="createdtime"></result>
         <result property="modifiedtime" column="modifiedtime"></result>
         <result property="name" column="name"></result>
+        <result property="password" column="password"></result>
         <result property="permissions" column="permissions"></result>
         <result property="deleted" column="deleted"></result>
     </resultMap>
 
     <select id="findAll" resultMap="AdministratorResultMap" resultType="org.example.pojo.Administrator">
---         select administrator_id,created_time,modified_time,name,permissions,deleted from administrator
+        --         select administrator_id,created_time,modified_time,name,permissions,deleted from administrator
         select * from administrator
+        where deleted = 0
     </select>
 
-    <select id="getAdministratorById" resultType="org.example.pojo.Administrator">
+    <select id="getAdministratorbyId" resultType="org.example.pojo.Administrator">
         select * from administrator
         where administratorid = #{administratorid}
     </select>
 
     <insert id="addAdministrator" parameterType="org.example.pojo.Administrator">
-        insert into administrator(administratorid,createdtime,modifiedtime,name,permissions,deleted)
-        values (#{administratorid},#{createtime},#{modifiedtime},#{name},#{permissions},#{deleted})
+        insert into administrator(administratorid,createdtime,modifiedtime,password,name,permissions,deleted)
+        values (#{administratorid},#{createdtime},#{createdtime},#{password},#{name},#{permissions},#{deleted})
     </insert>
 
     <update id="deleteAdministratorById">
@@ -44,12 +46,21 @@
     </update>
 
     <update id="updateAdministratorById" parameterType="org.example.pojo.Administrator">
-        update administrator set createdtime=#{createtime},modifiedtime=#{modifiedtime},name=#{name},permissions=#{permissions},deleted=#{deleted}
+        update administrator set modifiedtime=#{modifiedtime},password=#{password},name=#{name},permissions=#{permissions},deleted=#{deleted}
         where administratorid = #{administratorid}
     </update>
 
     <select id="findAdministratorByNameAndPermissions" resultType="org.example.pojo.Administrator">
         select * from administrator
         where name like concat('%',#{name},'%') and permissions=#{permissions}
+    </select>
+
+    <select id="searchAdministrator"  resultType="org.example.pojo.Administrator">
+        select * from administrator
+        where concat(administratorid,name) like concat('%',#{search},'%') and deleted=0
+    </select>
+
+    <select id="accountAdministrator" resultType="int">
+        select count(*) from administrator where deleted=0
     </select>
 </mapper>

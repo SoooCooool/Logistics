@@ -4,8 +4,8 @@
     <div class="user-details">
       <div><strong>姓名：</strong>{{ userInfo.name }}</div>
       <div><strong>手机号：</strong>{{ userInfo.phonenumber }}</div>
-      <div><strong>位置：</strong>{{ userInfo.location }}</div>
-      <div><strong>id：</strong>{{ userInfo.userid }}</div>
+      <div><strong>职业：</strong>{{ userInfo.occupation }}</div>
+      <div><strong>id：</strong>{{ userInfo.employeeid }}</div>
       <div><strong>密码：</strong>******</div>
     </div>
     <button @click="editUserInfo">修改信息</button>
@@ -16,15 +16,15 @@
       <form @submit.prevent="saveEdit">
         <div class="form-group">
           <label for="editedName">姓名：</label>
-          <input type="text" id="editedName" v-model="editedUserInfo.name" required />
+          <input type="text" id="editedName" v-model="editedUserInfo.name"  required/>
         </div>
         <div class="form-group">
           <label for="editedPhone">手机号：</label>
-          <input type="text" id="editedPhone" v-model="editedUserInfo.phonenumber" required />
+          <input type="text" id="editedPhone" v-model="editedUserInfo.phonenumber"  required/>
         </div>
         <div class="form-group">
-          <label for="editedLocation">位置：</label>
-          <input type="text" id="editedLocation" v-model="editedUserInfo.location" required />
+          <label for="editedLocation">职业：</label>
+          <input type="text" id="editedLocation" v-model="editedUserInfo.occupation"  required/>
         </div>
         <div class="form-group">
           <label for="editedPassword">密码：</label>
@@ -49,15 +49,15 @@ export default {
       userInfo: {
         name: '',
         phonenumber: '',
-        location: '',
+        occupation: '',
         password: '******', // 原始密码
-        userid:store.state.userid,
+        employeeid:store.state.userid,
       },
       editDialogVisible: false, // 编辑弹窗可见性
       editedUserInfo: {
         name: '',
         phonenumber: '',
-        location: '',
+        occupation: '',
         password: '',
       },
       userData: {}, // 存储从后端接收到的数据
@@ -75,15 +75,15 @@ export default {
   methods: {
 
     fetchUserInfo() {
-        axios.get('/api/user/queryById?id='+this.userInfo.userid) // 替换为您的后端接口 URL
-        .then(response => {
-          // 处理成功响应，将数据存储在 userData 中
-          this.userInfo = response.data.data;
-        })
-        .catch(error => {
-          // 处理错误响应
-          console.error('获取用户数据失败:', error);
-        })
+      axios.get('/api/employee/queryById?id='+this.userInfo.employeeid) // 替换为您的后端接口 URL
+          .then(response => {
+            // 处理成功响应，将数据存储在 userData 中
+            this.userInfo = response.data.data;
+          })
+          .catch(error => {
+            // 处理错误响应
+            console.error('获取用户数据失败:', error);
+          })
     },
     editUserInfo() {
       // 打开编辑弹窗时，将原始信息填充到输入框中
@@ -96,17 +96,18 @@ export default {
       this.editedUserInfo = {
         name: '',
         phonenumber: '',
-        location: '',
+        occupation: '',
         password: '',
       };
     },
     saveEdit() {
+
       this.userid=store.state.userid;
       // 向后端发送更新后的用户信息
       // this.editedUserInfo 包含了更新后的信息
       console.log('保存编辑的用户信息:', this.editedUserInfo);
 
-      axios.post('/api/user/update',this.editedUserInfo)
+      axios.post('/api/employee/update',this.editedUserInfo)
           .then(response => {
             // 处理成功响应
             console.log('Backend response:', response.data);

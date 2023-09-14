@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -77,13 +78,13 @@ public class UserController {
      * @param id
      * @return
      */
-    @PostMapping(value = "/deleteById")
+
+    @GetMapping(value = "/deleteById/{id}")
     @ResponseBody
-    public Result deleteById(@RequestParam(value = "id") String id){
+    public Result deleteById(@PathVariable("id") String id){
         userService.deleteUserById(id);
         return Result.success("success");
     }
-
     @PostMapping(value = "/deleteByIds")
     @ResponseBody
     public Result deleteByIds(@RequestParam(value = "ids") String[] ids){

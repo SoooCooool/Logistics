@@ -2,6 +2,7 @@ package org.example.service.impl;
 
 import org.example.dao.UserMapper;
 import org.example.pojo.User;
+import org.example.pojo.Vehicle;
 import org.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,4 +44,8 @@ public class UserServiceImpl implements UserService {
     public void updateUser(User user){
         userMapper.Updateuser(user);
     }
+    @Override
+    public List<User> searchUser(String search){return userMapper.searchUser(search);}
+    @Override
+    public int accountUser(){return userMapper.accountUser();}
 }

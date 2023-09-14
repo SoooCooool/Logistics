@@ -23,6 +23,11 @@
 <script>
   export default {
     name: "Header",
+    computed: {
+      store() {
+        return store
+      }
+    },
     setup() {
 
     },

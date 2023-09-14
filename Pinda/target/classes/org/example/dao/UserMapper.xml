@@ -6,27 +6,28 @@
 <mapper namespace="org.example.dao.UserMapper">
 
 
+
     <insert id="Adduser">
-        insert into user (userid,name,createdtime,modifiedtime,location,phonenumber,permissions)
-        values (#{userid},#{name},#{createdtime},#{modifiedtime},#{location},#{phonenumber},#{permissions})
+        insert into user (userid,name,createdtime,modifiedtime,location,phonenumber,permissions,deleted,password)
+        values (#{userid},#{name},#{createdtime},#{modifiedtime},#{location},#{phonenumber},#{permissions},#{deleted},#{password})
     </insert>
 
     <update id="Updateuser">
         update user
-        set name=#{name},createdtime=#{createdtime},modifiedtime=#{modifiedtime},location=#{location},
+        set name=#{name},createdtime=#{createdtime},modifiedtime=#{modifiedtime},location=#{location},password=#{password},
             phonenumber=#{phonenumber},permissions=#{permissions}
-        where user_id=#{user_id}
+        where userid=#{userid}
     </update>
 
-    <delete id="DeleteuserById">
+    <update id="DeleteuserById">
         update user
         set  deleted=1
         where userid=#{userid}
-    </delete>
+    </update>
 
     <select id="DeleteuserByIds" resultType="org.example.pojo.User">
         update user
-        set  deleted=1
+        set deleted=1
         where userid in
         <foreach collection="list" open="(" close=")" separator="," item="userid">
             #{userid}
@@ -34,10 +35,11 @@
     </select>
     <select id="QueryuserById" resultType="org.example.pojo.User">
         select * from user
-        where userid = #{userid}
+        where userid = #{userid} and deleted = 0
     </select>
     <select id="QueryuserAll" resultType="org.example.pojo.User">
         select * from user
+        where deleted = 0
     </select>
 
     <select id="Queryuser" resultType="org.example.pojo.User" parameterType="map">
@@ -61,6 +63,25 @@
             </if>
         </where>
     </select>
+    <select id="searchUser" resultType="org.example.pojo.User">
+        select * from user
+        where concat(userid,name,phonenumber,location) like concat('%',#{search},'%')
 
+        <!--        <where>-->
+        <!--            &lt;!&ndash;添加if条件如果参数为空则不拼接sql&ndash;&gt;-->
+        <!--            <if test="vehicleid != null and userid != '' ">-->
+        <!--                or vehicleid like concat('%',#{search},'%')-->
+        <!--            </if>-->
+        <!--            <if test="name != null and name != '' ">-->
+        <!--                or transferbelong like concat('%',#{search},'%')-->
+        <!--            </if>-->
+        <!--            <if test="createdtime != null and createdtime != '' ">-->
+        <!--                or driverid like concat('%',#{search},'%')-->
+        <!--            </if>-->
+        <!--        </where>-->
+    </select>
+    <select id="accountUser" resultType="int">
+        select count(*) from user where deleted=0
+    </select>
 
 </mapper>

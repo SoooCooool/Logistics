@@ -2,13 +2,11 @@
   <div class="user-info">
     <h2>用户信息</h2>
     <div class="user-details">
-      <div><strong>姓名：</strong>{{ userInfo.name }}</div>
-      <div><strong>手机号：</strong>{{ userInfo.phonenumber }}</div>
-      <div><strong>位置：</strong>{{ userInfo.location }}</div>
-      <div><strong>id：</strong>{{ userInfo.userid }}</div>
+      <div><strong>姓名：</strong>{{ adminInfo.name }}</div>
+      <div><strong>id：</strong>{{ adminInfo.administratorid }}</div>
       <div><strong>密码：</strong>******</div>
     </div>
-    <button @click="editUserInfo">修改信息</button>
+    <button @click="editAdminInfo">修改信息</button>
 
     <!-- 编辑弹窗 -->
     <div v-if="editDialogVisible" class="edit-dialog">
@@ -16,19 +14,11 @@
       <form @submit.prevent="saveEdit">
         <div class="form-group">
           <label for="editedName">姓名：</label>
-          <input type="text" id="editedName" v-model="editedUserInfo.name" required />
-        </div>
-        <div class="form-group">
-          <label for="editedPhone">手机号：</label>
-          <input type="text" id="editedPhone" v-model="editedUserInfo.phonenumber" required />
-        </div>
-        <div class="form-group">
-          <label for="editedLocation">位置：</label>
-          <input type="text" id="editedLocation" v-model="editedUserInfo.location" required />
+          <input type="text" id="editedName" v-model="editedAdminInfo.name"  required/>
         </div>
         <div class="form-group">
           <label for="editedPassword">密码：</label>
-          <input type="password" id="editedPassword" v-model="editedUserInfo.password"  required/>
+          <input type="password" id="editedPassword" v-model="editedAdminInfo.password"  required/>
         </div>
         <div class="form-actions">
           <button type="submit">保存</button>
@@ -46,21 +36,18 @@ import store from "@/store";
 export default {
   data() {
     return {
-      userInfo: {
+      adminInfo: {
         name: '',
-        phonenumber: '',
-        location: '',
         password: '******', // 原始密码
-        userid:store.state.userid,
+        administratorid:store.state.userid,
       },
       editDialogVisible: false, // 编辑弹窗可见性
-      editedUserInfo: {
+      editedAdminInfo: {
         name: '',
-        phonenumber: '',
-        location: '',
         password: '',
+        administratorid:'',
       },
-      userData: {}, // 存储从后端接收到的数据
+      adminData: {}, // 存储从后端接收到的数据
 
     };
   },
@@ -68,26 +55,23 @@ export default {
     // 在页面创建时调用后端接口获取用户信息
     this.fetchUserInfo();
 
-
-
-
   },
   methods: {
 
     fetchUserInfo() {
-        axios.get('/api/user/queryById?id='+this.userInfo.userid) // 替换为您的后端接口 URL
-        .then(response => {
-          // 处理成功响应，将数据存储在 userData 中
-          this.userInfo = response.data.data;
-        })
-        .catch(error => {
-          // 处理错误响应
-          console.error('获取用户数据失败:', error);
-        })
+      axios.get('/api/administrator/getbyId?id='+this.adminInfo.administratorid) // 替换为您的后端接口 URL
+          .then(response => {
+            // 处理成功响应，将数据存储在 userData 中
+            this.adminInfo = response.data.data;
+          })
+          .catch(error => {
+            // 处理错误响应
+            console.error('获取用户数据失败:', error);
+          })
     },
-    editUserInfo() {
+    editAdminInfo() {
       // 打开编辑弹窗时，将原始信息填充到输入框中
-      this.editedUserInfo = { ...this.userInfo };
+      this.editedAdminInfo = { ...this.adminInfo };
       this.editDialogVisible = true;
     },
     cancelEdit() {
@@ -95,18 +79,16 @@ export default {
       this.editDialogVisible = false;
       this.editedUserInfo = {
         name: '',
-        phonenumber: '',
-        location: '',
         password: '',
       };
     },
     saveEdit() {
-      this.userid=store.state.userid;
+
+      this.administratorid=store.state.userid;
       // 向后端发送更新后的用户信息
       // this.editedUserInfo 包含了更新后的信息
-      console.log('保存编辑的用户信息:', this.editedUserInfo);
-
-      axios.post('/api/user/update',this.editedUserInfo)
+      console.log('保存编辑的用户信息:', this.editedAdminInfo);
+      axios.post('/api/administrator/updateById',this.editedAdminInfo)
           .then(response => {
             // 处理成功响应
             console.log('Backend response:', response.data);
